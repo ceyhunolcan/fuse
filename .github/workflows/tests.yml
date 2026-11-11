@@ -1,0 +1,33 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Configure Git for task fixtures
+        run: |
+          git config --global user.name "FUSE CI"
+          git config --global user.email "ci@example.invalid"
+      - name: Unit tests
+        run: python -m unittest discover -s tests -t .
+      - name: Reference checks for the three tasks
+        run: |
+          for task in circuit_001 codesearch_001 textdrop_001; do
+            python -m runner.cli validate --task "$task" --output "$RUNNER_TEMP/validate-$task"
+          done
+      - name: Dataset build
+        run: python scripts/build_hf_dataset.py "$RUNNER_TEMP/hf"

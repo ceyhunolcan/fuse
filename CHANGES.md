@@ -23,5 +23,7 @@ This repository is a public edition of the FUSE development harness, revision R5
 - `mining/`: the two mined development triples (Starlette and Strix), their ports, fixture checks and the line-provenance scan, as released with the registered-report supplement.
 - `scripts/build_hf_dataset.py`: builds the HuggingFace development split from this repository.
 - `README.md`, `NOTICE`, `CITATION.cff`, this file and `docs/running-a-model.md`.
+- `docs/figures/`: the paper's two figures and the registered report's planning figure, used in the README.
+- `.github/workflows/tests.yml`: runs the unit tests, the three task checks and the dataset build on every push.
 
 The reproducibility package on Kaggle remains the authoritative record of the study: it re-runs the audits and recomputes every reported result from the sealed evidence.
