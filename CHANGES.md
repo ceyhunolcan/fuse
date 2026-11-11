@@ -21,7 +21,7 @@ This repository is a public edition of the FUSE development harness, revision R5
 
 - `configs/openai_compatible.example.json` and `docker/sandbox.Dockerfile`: running the harness against any OpenAI-compatible endpoint (see `docs/running-a-model.md`).
 - `mining/`: the two mined development triples (Starlette and Strix), their ports, fixture checks and the line-provenance scan, as released with the registered-report supplement.
-- `scripts/build_hf_dataset.py`: builds the HuggingFace development split from this repository.
+- `scripts/build_hf_dataset.py` and `docs/huggingface-card.md`: build the HuggingFace dataset (subsets `authored` and `mined`) from this repository.
 - `README.md`, `NOTICE`, `CITATION.cff`, this file and `docs/running-a-model.md`.
 - `docs/figures/`: the paper's two figures and the registered report's planning figure, used in the README.
 - `.github/workflows/tests.yml`: runs the unit tests, the three task checks and the dataset build on every push.

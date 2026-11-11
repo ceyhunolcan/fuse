@@ -32,7 +32,7 @@ where $Y_{dr} = 1$ when the A artifact passes its hidden A suite and the extende
 | Agent harness | The study's agent loop, Docker sandbox, grading and τ_ID estimator |
 | Model access | Any OpenAI-compatible chat-completions endpoint |
 | Unit tests | 184, running on Python 3.12 with no extra packages |
-| Dataset | The same five tasks on HuggingFace as `ceyhunolcan/fuse` (split `development`) |
+| Dataset | The same five tasks on HuggingFace as [`ceyhunolcan/fuse`](https://huggingface.co/datasets/ceyhunolcan/fuse), in subsets `authored` and `mined` (split `development`) |
 
 ### Authored tasks
 
@@ -185,7 +185,7 @@ The confirmatory study is proposed as a registered report: the design and analys
 | `mining/` | Mined development triples, the line-provenance scan and the mining screen |
 | `configs/`, `docker/` | Example config for OpenAI-compatible endpoints, and the sandbox image |
 | `scripts/build_hf_dataset.py` | Builds the HuggingFace development split from this repository |
-| `docs/` | Model-run guide and figures |
+| `docs/` | Model-run guide, the HuggingFace dataset card and figures |
 | `tests/` | Unit tests |
 
 ## Relationship to the study
