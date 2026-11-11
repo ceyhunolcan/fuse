@@ -13,7 +13,7 @@ This repository is a public edition of the FUSE development harness, revision R5
 
 ## Removed
 
-- **Kaggle orchestration.** The study ran on Kaggle GPUs through a separate runner (process ownership, chroot sandboxes, release authorization, rank supervision), which is archived in the reproducibility package on Kaggle. The 35 harness modules and 25 test modules that only served that path were removed here, because they cannot run without that environment.
+- **Kaggle orchestration.** The study ran on Kaggle GPUs through a separate runner (process ownership, chroot sandboxes, release authorization, rank supervision), which is archived in the reproducibility package on Kaggle. The 35 harness modules and 25 test modules that only served that path were removed here, because they cannot run without that environment. Two October planning modules (`analysis/design_sensitivity.py`, `analysis/interval_comparison.py`) and their tests were also removed: the registered report's simulations replaced them, and they were the only code needing NumPy.
 - **Unreleased tasks.** `migration_001` and `filequery_001` were set aside before the study and are not included.
 - **Internal records.** Revision notes, review records, results and the working paper draft are not part of this repository.
 

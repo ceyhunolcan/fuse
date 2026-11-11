@@ -10,7 +10,7 @@
 | B1 | [#3421](https://github.com/Kludex/starlette/pull/3421) | `f1dc9b630da61ee14e8b7580921a7d8f55dfa4ff` | 2026-08-07 08:25:23 | Expands the default excluded types to already-compressed formats (`audio/*`, `video/*`, images, archives, WOFF), relying on A's wildcard matching |
 | B2 | [#3420](https://github.com/Kludex/starlette/pull/3420) | `b07b8c61516307c6899ea16c8d2a00eaee3e3f84` | 2026-08-07 08:25:22 | Skips compression of partial (206) responses, editing the response-start branch that A rewrote |
 
-All three changes were merged after the eligibility cutoff, 2026-06-06 00:00 UTC (see `../checkpoint-release-evidence.json`). Each adds tests. A changes 114 lines. B1 and B2 both modify code that A introduced or changed in `starlette/middleware/gzip.py`.
+All three changes were merged after the eligibility cutoff, 2026-06-06 00:00 UTC (see `checkpoint-release-evidence.json` in the registered-report supplement on Kaggle). Each adds tests. A changes 114 lines. B1 and B2 both modify code that A introduced or changed in `starlette/middleware/gzip.py`.
 
 ## Porting
 
