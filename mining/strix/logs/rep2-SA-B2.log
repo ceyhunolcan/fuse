@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+____________ test_report_tool_replaces_create_vulnerability_report _____________
+
+    def test_report_tool_replaces_create_vulnerability_report() -> None:
+        for is_root in (True, False):
+>           agent = factory.build_strix_agent(is_root=is_root, report_tool=_tool("file_pr_finding"))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           TypeError: build_strix_agent() got an unexpected keyword argument 'report_tool'
+
+tests/test_agent_tool_registration.py:78: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_agent_tool_registration.py::test_report_tool_replaces_create_vulnerability_report
+1 failed in 1.58s

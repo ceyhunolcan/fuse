@@ -1,0 +1,26 @@
+{
+ "repo": "ipython",
+ "cutoff": "2026-06-06",
+ "commits": 56,
+ "triples": [
+  {
+   "A": {
+    "pr": 15334,
+    "title": "escape urls and file names interpolated into display html attributes (#15334)",
+    "lines": 101
+   },
+   "Bs": [
+    {
+     "pr": 15433,
+     "title": "Use the file path as the source of a non-embedded local Image \ud83e\udd16\ud83e\udd16 (#15433)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 15348,
+     "title": "Convert IFrame sources to strings before HTML escaping (#15348)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  }
+ ]
+}

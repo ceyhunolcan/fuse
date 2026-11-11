@@ -1,0 +1,11 @@
+........................................................................ [ 48%]
+........................................................................ [ 96%]
+.....                                                                    [100%]
+=============================== warnings summary ===============================
+tests/test_config_loader.py::test_persist_current_writes_env_block
+tests/test_config_loader.py::test_persist_current_sets_0600_mode
+  /private/var/folders/2g/3pgf180159565spcklytmbb80000gn/T/tmppfayzy3r/w/strix/config/loader.py:63: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    for sub_name in s.model_fields:
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+149 passed, 2 warnings in 4.36s

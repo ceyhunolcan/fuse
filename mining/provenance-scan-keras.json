@@ -1,0 +1,639 @@
+{
+ "repo": "keras",
+ "cutoff": "2026-06-06",
+ "commits": 568,
+ "triples": [
+  {
+   "A": {
+    "pr": 24009,
+    "title": "Declare the GPTQ and AWQ strategies and their policy surface once (#24009)",
+    "lines": 194
+   },
+   "Bs": [
+    {
+     "pr": 24057,
+     "title": "Drive GPTQ and AWQ calibration through one run with one stage loop (#24057)",
+     "lines_of_A_modified": 12
+    },
+    {
+     "pr": 24015,
+     "title": "Give GPTQ and AWQ one per-layer Calibrator (#24015)",
+     "lines_of_A_modified": 4
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23954,
+    "title": "Retire the calibration flags and the stashed int4 block size (#23954)",
+    "lines": 267
+   },
+   "Bs": [
+    {
+     "pr": 24015,
+     "title": "Give GPTQ and AWQ one per-layer Calibrator (#24015)",
+     "lines_of_A_modified": 13
+    },
+    {
+     "pr": 24009,
+     "title": "Declare the GPTQ and AWQ strategies and their policy surface once (#24009)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23184,
+    "title": "perf(layers): fast path for single-InputSpec assert_input_compatibility (#23184)",
+    "lines": 377
+   },
+   "Bs": [
+    {
+     "pr": 24017,
+     "title": "Stop using `backend.standardize_shape` and instead import it... (#24017)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23920,
+     "title": "Fix Functional models accepting inputs with a mismatched last axis (#23920)",
+     "lines_of_A_modified": 7
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23897,
+    "title": "Read a layer's own dtype policy, and make quantization_summary exact (#23897)",
+    "lines": 280
+   },
+   "Bs": [
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 24009,
+     "title": "Declare the GPTQ and AWQ strategies and their policy surface once (#24009)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23795,
+    "title": "Enable pluggable backends. (#23795)",
+    "lines": 252
+   },
+   "Bs": [
+    {
+     "pr": 23907,
+     "title": "Export backend specific sub-classes without another subclass. (#23907)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23744,
+     "title": "Eliminates TorchDynamo graph breaks during torch backend model compilation. (#23744)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 6
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23608,
+    "title": "Promote integer inputs to float in leaky_relu (#23608)",
+    "lines": 39
+   },
+   "Bs": [
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 6
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23545,
+    "title": "Promote integer inputs to float in hard_sigmoid and hard_silu (#23545)",
+    "lines": 101
+   },
+   "Bs": [
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 9
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 11
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23762,
+    "title": "Fix two dtype-policy handling bugs in Layer (#23762)",
+    "lines": 119
+   },
+   "Bs": [
+    {
+     "pr": 23978,
+     "title": "Make calibration capture a dispatch contract instead of a call patch (#23978)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23897,
+     "title": "Read a layer's own dtype policy, and make quantization_summary exact (#23897)",
+     "lines_of_A_modified": 9
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23663,
+    "title": "Fixing `binary_crossentropy` with an integer target stopping the Python process on MPS (#23663)",
+    "lines": 58
+   },
+   "Bs": [
+    {
+     "pr": 24025,
+     "title": "Stop using `backend.is_(int|float)_dtype` and instead import it... (#24025)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 5
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23758,
+    "title": "Move TernaryDense onto the quantization geometry protocol (#23758)",
+    "lines": 158
+   },
+   "Bs": [
+    {
+     "pr": 23906,
+     "title": "Record kernel facts in `build()` and store ternary codes at `_kernel` (#23906)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 23845,
+     "title": "Add QuantizedWeight: one view over a quantized weight's stored variables (#23845)",
+     "lines_of_A_modified": 7
+    },
+    {
+     "pr": 23811,
+     "title": "Store GPTQ and AWQ kernels in the layer's orientation (#23811)",
+     "lines_of_A_modified": 14
+    },
+    {
+     "pr": 23760,
+     "title": "Retire the legacy per-mode dispatch path (#23760)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23510,
+    "title": "Let the backend provide fused rms and layer normalization (#23510)",
+    "lines": 210
+   },
+   "Bs": [
+    {
+     "pr": 23782,
+     "title": "Keep beta in layer normalization for large inputs (#23782)",
+     "lines_of_A_modified": 6
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 13
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23494,
+    "title": "Implement cov function in keras.ops (#23494)",
+    "lines": 251
+   },
+   "Bs": [
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 23922,
+     "title": "Fix complex covariance in fallback and NumPy backend (#23922)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 51
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 13
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23594,
+    "title": "Rename QuantizationMode to QuantizationStrategy (#23594)",
+    "lines": 277
+   },
+   "Bs": [
+    {
+     "pr": 24026,
+     "title": "Route quantized policy strings by grammar instead of prefix matching (#24026)",
+     "lines_of_A_modified": 12
+    },
+    {
+     "pr": 24009,
+     "title": "Declare the GPTQ and AWQ strategies and their policy surface once (#24009)",
+     "lines_of_A_modified": 6
+    },
+    {
+     "pr": 23845,
+     "title": "Add QuantizedWeight: one view over a quantized weight's stored variables (#23845)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 23760,
+     "title": "Retire the legacy per-mode dispatch path (#23760)",
+     "lines_of_A_modified": 22
+    },
+    {
+     "pr": 23591,
+     "title": "Add the quantization geometry protocol and move Dense onto it (#23591)",
+     "lines_of_A_modified": 4
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23498,
+    "title": "Add copysign to keras.ops.numpy (#23498)",
+    "lines": 191
+   },
+   "Bs": [
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 32
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 9
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23500,
+    "title": "Add float_power to keras.ops.numpy (#23500)",
+    "lines": 176
+   },
+   "Bs": [
+    {
+     "pr": 23995,
+     "title": "Stop using `backend.standardize_dtype` and instead import it from `keras.src.backend.common`. (#23995)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 13
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 7
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23402,
+    "title": "Introduce Model Parallel infrastructure and DTensor support for Keras Variables in core.py (#23402)",
+    "lines": 348
+   },
+   "Bs": [
+    {
+     "pr": 24058,
+     "title": "Add `layout` argument to `Layer.add_weight`. (#24058)",
+     "lines_of_A_modified": 13
+    },
+    {
+     "pr": 24028,
+     "title": "Gather the global value of torch `DTensor`s in `convert_to_numpy` (#24028)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 23946,
+     "title": "Track the torch DTensor promotion mode per thread (#23946)",
+     "lines_of_A_modified": 21
+    },
+    {
+     "pr": 23948,
+     "title": "Make `jit_compile=True` work under torch `DataParallel` (#23948)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23947,
+     "title": "Redistribute DTensors with another layout in torch `distribute_tensor` (#23947)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23939,
+     "title": "Fix torch `Variable.assign` inside an `AutocastScope` (#23939)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23225,
+    "title": "[Fix] keras.ops inconsistently downcasts float64 to float32 (#23225)",
+    "lines": 181
+   },
+   "Bs": [
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23417,
+     "title": "Fix nextafter returning inf instead of the largest finite value (#23417)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23469,
+    "title": "Fix sparsemax threshold when more than one logit is in the support (#23469)",
+    "lines": 37
+   },
+   "Bs": [
+    {
+     "pr": 23858,
+     "title": "Make OpenVINO a pluggable backend (#23858)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23548,
+     "title": "Keep numpy sparsemax output in the input dtype (#23548)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23514,
+    "title": "Fix calibration memory, AWQ staging, and sampling reproducibility (#23514)",
+    "lines": 301
+   },
+   "Bs": [
+    {
+     "pr": 24057,
+     "title": "Drive GPTQ and AWQ calibration through one run with one stage loop (#24057)",
+     "lines_of_A_modified": 63
+    },
+    {
+     "pr": 24035,
+     "title": "Keep one sampling path in the calibration dataloader (#24035)",
+     "lines_of_A_modified": 6
+    },
+    {
+     "pr": 24015,
+     "title": "Give GPTQ and AWQ one per-layer Calibrator (#24015)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 23978,
+     "title": "Make calibration capture a dispatch contract instead of a call patch (#23978)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23481,
+    "title": "Batch GPTQ calibration forwards and use Cholesky inverse-Hessian (#23481)",
+    "lines": 195
+   },
+   "Bs": [
+    {
+     "pr": 24174,
+     "title": "Batch AWQ's calibration forwards like GPTQ's (#24174)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 24057,
+     "title": "Drive GPTQ and AWQ calibration through one run with one stage loop (#24057)",
+     "lines_of_A_modified": 46
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23366,
+    "title": "Add robust and optimized DTensor distribution utilities for PyTorch backend (#23366)",
+    "lines": 288
+   },
+   "Bs": [
+    {
+     "pr": 23948,
+     "title": "Make `jit_compile=True` work under torch `DataParallel` (#23948)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23397,
+     "title": "[PLUGGABLE BACKEND] Initial refactor. (#23397)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23316,
+    "title": "Adding data parallel support for torch backend (#23316)",
+    "lines": 260
+   },
+   "Bs": [
+    {
+     "pr": 23948,
+     "title": "Make `jit_compile=True` work under torch `DataParallel` (#23948)",
+     "lines_of_A_modified": 38
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23364,
+    "title": "User Layer propagation of call context arguments in Model too. (#23364)",
+    "lines": 167
+   },
+   "Bs": [
+    {
+     "pr": 23978,
+     "title": "Make calibration capture a dispatch contract instead of a call patch (#23978)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 23762,
+     "title": "Fix two dtype-policy handling bugs in Layer (#23762)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23397,
+     "title": "[PLUGGABLE BACKEND] Initial refactor. (#23397)",
+     "lines_of_A_modified": 8
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23191,
+    "title": "Preserve segmentation mask dtype and class indices in preprocessing layers (#23191)",
+    "lines": 227
+   },
+   "Bs": [
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 7
+    },
+    {
+     "pr": 23397,
+     "title": "[PLUGGABLE BACKEND] Initial refactor. (#23397)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23326,
+    "title": "Fix TraceContext error for NNX backend  reported in https://github.com/keras-team/keras/issues/23289 (#23326)",
+    "lines": 176
+   },
+   "Bs": [
+    {
+     "pr": 24199,
+     "title": "Normalize imports of `SymbolicScope`/`in_symbolic_scope`. (#24199)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23642,
+     "title": "Move backend ops implementation in an `ops` folder, (#23642)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23340,
+    "title": "fix numpy bug in keras/src/ops/numpy.py and add test cases for it (#23340)",
+    "lines": 36
+   },
+   "Bs": [
+    {
+     "pr": 23480,
+     "title": "Normalize backend.is_tensor to backend.ops.is_tensor (#23480)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23342,
+     "title": "address comments on https://github.com/keras-team/keras/pull/23340 (#23342)",
+     "lines_of_A_modified": 5
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23267,
+    "title": "Support `data_format=\"channels_first\"` in `keras.ops.image.reconstruct_patches` (#23267)",
+    "lines": 188
+   },
+   "Bs": [
+    {
+     "pr": 23319,
+     "title": "Auto-infer output_size for padding=\"valid\" in keras.ops.image.reconstruct_patches (#23319)",
+     "lines_of_A_modified": 12
+    },
+    {
+     "pr": 23397,
+     "title": "[PLUGGABLE BACKEND] Initial refactor. (#23397)",
+     "lines_of_A_modified": 8
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 23234,
+    "title": "Support steps_per_execution > 1 in PyTorch backend (#23234)",
+    "lines": 114
+   },
+   "Bs": [
+    {
+     "pr": 24028,
+     "title": "Gather the global value of torch `DTensor`s in `convert_to_numpy` (#24028)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 23744,
+     "title": "Eliminates TorchDynamo graph breaks during torch backend model compilation. (#23744)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  }
+ ]
+}

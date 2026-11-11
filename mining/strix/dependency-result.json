@@ -1,0 +1,21 @@
+{
+ "B1": {
+  "source_edit_applies_to_S": true,
+  "apply_error": null,
+  "outcomes": {
+   "test_root_ends_with_the_given_finish_tool": "passed",
+   "test_nudge_names_the_root_finish_tool": "passed"
+  },
+  "passed": 2,
+  "of": 2
+ },
+ "B2": {
+  "source_edit_applies_to_S": true,
+  "apply_error": null,
+  "outcomes": {
+   "test_report_tool_replaces_create_vulnerability_report": "passed"
+  },
+  "passed": 1,
+  "of": 1
+ }
+}

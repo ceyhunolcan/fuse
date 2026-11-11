@@ -1,0 +1,58 @@
+..........F.................F.......                                     [100%]
+=================================== FAILURES ===================================
+________________ test_gzip_ignored_on_range_responses[asyncio] _________________
+
+tmp_path = PosixPath('/private/tmp/pytest-of-ceyhun/pytest-4/test_gzip_ignored_on_range_res0')
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    def test_gzip_ignored_on_range_responses(tmp_path: Path, test_client_factory: TestClientFactory) -> None:
+        path = tmp_path / "example.txt"
+        path.write_text("x" * 4000)
+    
+        def homepage(request: Request) -> FileResponse:
+            return FileResponse(path)
+    
+        app = Starlette(
+            routes=[Route("/", endpoint=homepage)],
+            middleware=[Middleware(GZipMiddleware)],
+        )
+    
+        client = test_client_factory(app)
+        response = client.get("/", headers={"accept-encoding": "gzip", "range": "bytes=0-1999"})
+        assert response.status_code == 206
+        assert response.content == b"x" * 2000
+>       assert "Content-Encoding" not in response.headers
+E       assert 'Content-Encoding' not in Headers({'content-type': 'text/plain; charset=utf-8', 'accept-ranges': 'bytes', 'content-length': '35', 'last-modified...4712e83722efa0b6b2a6da"', 'content-range': 'bytes 0-1999/4000', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip'})
+E        +  where Headers({'content-type': 'text/plain; charset=utf-8', 'accept-ranges': 'bytes', 'content-length': '35', 'last-modified...4712e83722efa0b6b2a6da"', 'content-range': 'bytes 0-1999/4000', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip'}) = <Response [206 Partial Content]>.headers
+
+tests/middleware/test_gzip.py:260: AssertionError
+__________________ test_gzip_ignored_on_range_responses[trio] __________________
+
+tmp_path = PosixPath('/private/tmp/pytest-of-ceyhun/pytest-4/test_gzip_ignored_on_range_res1')
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    def test_gzip_ignored_on_range_responses(tmp_path: Path, test_client_factory: TestClientFactory) -> None:
+        path = tmp_path / "example.txt"
+        path.write_text("x" * 4000)
+    
+        def homepage(request: Request) -> FileResponse:
+            return FileResponse(path)
+    
+        app = Starlette(
+            routes=[Route("/", endpoint=homepage)],
+            middleware=[Middleware(GZipMiddleware)],
+        )
+    
+        client = test_client_factory(app)
+        response = client.get("/", headers={"accept-encoding": "gzip", "range": "bytes=0-1999"})
+        assert response.status_code == 206
+        assert response.content == b"x" * 2000
+>       assert "Content-Encoding" not in response.headers
+E       assert 'Content-Encoding' not in Headers({'content-type': 'text/plain; charset=utf-8', 'accept-ranges': 'bytes', 'content-length': '35', 'last-modified...9bc8d01645b10b5654cfc4"', 'content-range': 'bytes 0-1999/4000', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip'})
+E        +  where Headers({'content-type': 'text/plain; charset=utf-8', 'accept-ranges': 'bytes', 'content-length': '35', 'last-modified...9bc8d01645b10b5654cfc4"', 'content-range': 'bytes 0-1999/4000', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip'}) = <Response [206 Partial Content]>.headers
+
+tests/middleware/test_gzip.py:260: AssertionError
+=========================== short test summary info ============================
+FAILED tests/middleware/test_gzip.py::test_gzip_ignored_on_range_responses[asyncio]
+FAILED tests/middleware/test_gzip.py::test_gzip_ignored_on_range_responses[trio]
+2 failed, 34 passed in 0.39s

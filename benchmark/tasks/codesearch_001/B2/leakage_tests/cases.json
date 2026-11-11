@@ -1,0 +1,28 @@
+[
+  {
+    "request": {
+      "files": [
+        {
+          "path": "a",
+          "language": "python",
+          "source": "old(x)\n"
+        }
+      ],
+      "pattern": "old(x)",
+      "replacement": "new(x)",
+      "apply": true
+    },
+    "expected_subset": {
+      "files": [
+        {
+          "path": "a",
+          "language": "python",
+          "source": "new(x)\n"
+        }
+      ]
+    },
+    "required_keys": [
+      "changes"
+    ]
+  }
+]

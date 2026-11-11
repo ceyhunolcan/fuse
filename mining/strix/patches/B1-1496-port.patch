@@ -1,0 +1,170 @@
+diff --git a/strix/agents/factory.py b/strix/agents/factory.py
+index 6564267..e946a05 100644
+--- a/strix/agents/factory.py
++++ b/strix/agents/factory.py
+@@ -403,6 +403,7 @@ def build_strix_agent(
+     system_prompt_context: dict[str, Any] | None = None,
+     extra_tools: Sequence[Tool] | None = None,
+     instructions_override: str | None = None,
++    finish_tool: Tool = finish_scan,
+ ) -> SandboxAgent[Any]:
+     """Build a SandboxAgent for either root or child use.
+ 
+@@ -413,6 +414,7 @@ def build_strix_agent(
+             registered via ``register_agent_tools``.
+         instructions_override: Use this verbatim as the system prompt instead
+             of rendering the built-in scan prompt.
++        finish_tool: The tool that ends the run, given to the root agent.
+     """
+     if instructions_override is not None:
+         instructions = instructions_override
+@@ -428,7 +430,7 @@ def build_strix_agent(
+ 
+     agent_tools = [*_EXTRA_TOOLS, *(extra_tools or [])]
+     if is_root:
+-        tools: list[Tool] = [*_BASE_TOOLS, *agent_tools, finish_scan]
++        tools: list[Tool] = [*_BASE_TOOLS, *agent_tools, finish_tool]
+     else:
+         tools = [*_BASE_TOOLS, *agent_tools, agent_finish]
+     _ensure_unique_tool_names(tools)
+diff --git a/strix/core/agents.py b/strix/core/agents.py
+index 24a7185..3c57982 100644
+--- a/strix/core/agents.py
++++ b/strix/core/agents.py
+@@ -43,6 +43,7 @@ class AgentCoordinator:
+         self._lock = asyncio.Lock()
+         self._snapshot_path: Path | None = None
+         self.is_shutting_down = False
++        self.root_finish_tool = "finish_scan"
+         self._budget_stopped = False
+ 
+     def set_snapshot_path(self, path: Path) -> None:
+diff --git a/strix/core/execution.py b/strix/core/execution.py
+index 06dc3dd..d79fb38 100644
+--- a/strix/core/execution.py
++++ b/strix/core/execution.py
+@@ -326,6 +326,7 @@ async def _run_noninteractive_until_lifecycle(
+         input_data = await _append_noninteractive_tool_required_message(
+             session=session,
+             context=context,
++            root_finish_tool=coordinator.root_finish_tool,
+             attempt=invalid_final_outputs,
+             limit=invalid_final_output_limit,
+         )
+@@ -474,8 +475,9 @@ async def _append_noninteractive_tool_required_message(
+     context: dict[str, Any],
+     attempt: int,
+     limit: int,
++    root_finish_tool: str = "finish_scan",
+ ) -> list[dict[str, str]]:
+-    finish_tool = "finish_scan" if context.get("parent_id") is None else "agent_finish"
++    finish_tool = root_finish_tool if context.get("parent_id") is None else "agent_finish"
+     message = (
+         "Your previous response ended the autonomous Strix run without a lifecycle tool call. "
+         "That is invalid in non-interactive mode; plain text final answers are ignored. "
+diff --git a/strix/core/runner.py b/strix/core/runner.py
+index 13052b6..5bd18ba 100644
+--- a/strix/core/runner.py
++++ b/strix/core/runner.py
+@@ -39,11 +39,13 @@ from strix.core.paths import run_dir_for, runtime_state_dir
+ from strix.core.sessions import open_agent_session
+ from strix.runtime import session_manager
+ from strix.telemetry.logging import set_scan_id, setup_scan_logging
++from strix.tools.finish.tool import finish_scan
+ 
+ 
+ if TYPE_CHECKING:
+     from agents.memory import SQLiteSession
+     from agents.result import RunResultBase
++    from agents.tool import Tool
+ 
+ 
+ logger = logging.getLogger(__name__)
+@@ -64,8 +66,12 @@ async def run_strix_scan(
+     model: str | None = None,
+     cleanup_on_exit: bool = True,
+     event_sink: StreamEventSink | None = None,
++    root_finish_tool: Tool = finish_scan,
+ ) -> RunResultBase | None:
+-    """Run or resume one Strix scan against a sandbox."""
++    """Run or resume one Strix scan against a sandbox.
++
++    ``root_finish_tool`` is the tool the root agent ends the run with.
++    """
+     if scan_id is None:
+         scan_id = f"scan-{uuid.uuid4().hex[:8]}"
+ 
+@@ -103,6 +109,7 @@ async def run_strix_scan(
+     if coordinator is None:
+         coordinator = AgentCoordinator()
+     coordinator.set_snapshot_path(agents_path)
++    coordinator.root_finish_tool = root_finish_tool.name
+ 
+     from strix.tools.notes.tools import hydrate_notes_from_disk
+     from strix.tools.todo.tools import hydrate_todos_from_disk
+@@ -180,6 +187,7 @@ async def run_strix_scan(
+             interactive=interactive,
+             chat_completions_tools=chat_completions_tools,
+             system_prompt_context=scope_context,
++            finish_tool=root_finish_tool,
+         )
+ 
+         if not is_resume:
+diff --git a/strix/tools/agents_graph/tools.py b/strix/tools/agents_graph/tools.py
+index 5c1bfd4..4dc5289 100644
+--- a/strix/tools/agents_graph/tools.py
++++ b/strix/tools/agents_graph/tools.py
+@@ -520,7 +520,8 @@ async def agent_finish(
+             {
+                 "success": False,
+                 "error": (
+-                    "agent_finish is for subagents. Root/main agents must call finish_scan instead"
++                    "agent_finish is for subagents. Root/main agents must call "
++                    f"{coordinator.root_finish_tool} instead"
+                 ),
+             },
+             ensure_ascii=False,
+diff --git a/tests/test_agent_tool_registration.py b/tests/test_agent_tool_registration.py
+index 8c7d67d..85958cf 100644
+--- a/tests/test_agent_tool_registration.py
++++ b/tests/test_agent_tool_registration.py
+@@ -48,6 +48,15 @@ def test_registered_tools_appear_before_lifecycle_tool() -> None:
+     assert child_names[-2:] == ["extra", "agent_finish"]
+ 
+ 
++def test_root_ends_with_the_given_finish_tool() -> None:
++    root = factory.build_strix_agent(is_root=True, finish_tool=_tool("finish_pr_review"))
++
++    root_names = [t.name for t in root.tools]
++
++    assert root_names[-1] == "finish_pr_review"
++    assert "finish_scan" not in root_names
++
++
+ def test_per_call_extra_tools_stack_with_registry() -> None:
+     factory.register_agent_tools(_tool("registered"))
+ 
+diff --git a/tests/test_execution.py b/tests/test_execution.py
+index 59a37e6..61e7a65 100644
+--- a/tests/test_execution.py
++++ b/tests/test_execution.py
+@@ -42,3 +42,19 @@ async def test_wait_for_message_returns_immediately_after_budget_stop() -> None:
+ 
+     # No pending messages, but the stop flag short-circuits the wait.
+     await asyncio.wait_for(coordinator.wait_for_message("agent"), timeout=1.0)
++
++
++@pytest.mark.asyncio
++async def test_nudge_names_the_root_finish_tool() -> None:
++    from strix.core.execution import _append_noninteractive_tool_required_message
++
++    items = await _append_noninteractive_tool_required_message(
++        session=None,
++        context={"parent_id": None},
++        attempt=1,
++        limit=3,
++        root_finish_tool="finish_pr_review",
++    )
++
++    assert "call finish_pr_review" in items[0]["content"]
++    assert "finish_scan" not in items[0]["content"]

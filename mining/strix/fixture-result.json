@@ -1,0 +1,378 @@
+{
+ "repository": "https://github.com/usestrix/strix",
+ "license": "Apache-2.0",
+ "reserved_for": "development only (never in the confirmatory set)",
+ "eligibility_cutoff_utc": "2026-06-06T00:00:00Z",
+ "commits": {
+  "S": "c13960ae01a355a42cf35e3a01d2791fcec7a317",
+  "A": "205e0b370706283cee4bcd6d7d8ca7faf41e9d23",
+  "B1_upstream": "62b496430da5df5e9e79a190e7af6f92529883a3",
+  "B2_upstream": "3a3855fc4f0ecd0e7d15488afb29a779162eba85"
+ },
+ "pull_requests": {
+  "A": 733,
+  "B1": 1496,
+  "B2": 1550
+ },
+ "patches": {
+  "A-733.patch": {
+   "sha256": "2ad4353f4c98f46220749363d13ae3075b44ddc7f8374a8f16340f8720d251f0",
+   "bytes": 6888
+  },
+  "B1-1496-port.patch": {
+   "sha256": "431cd1d073d89e42224cd59203a6611be2c4b1f3fcc487a8848fc9c29d9a5904",
+   "bytes": 6878
+  },
+  "B1-1496.patch": {
+   "sha256": "bc583ad5a53a96075fc9e3bcf6d54cfd36e4f9858bf5db9872fdcad431fc128a",
+   "bytes": 12880
+  },
+  "B2-1550-port.patch": {
+   "sha256": "d065e6def6af40a19a6a83859f7e6a5a1fa67525314dffe40e2a2ea69c5cc23b",
+   "bytes": 8275
+  },
+  "B2-1550.patch": {
+   "sha256": "23040b7bad20eb8d827896158fa7004ab649da9c862b2da3910e3d6ad94ef528",
+   "bytes": 18393
+  }
+ },
+ "suites": {
+  "A": {
+   "files": [
+    "tests/test_agent_tool_registration.py"
+   ],
+   "fail_to_pass": [
+    "tests/test_agent_tool_registration.py::test_instructions_override_is_used_verbatim",
+    "tests/test_agent_tool_registration.py::test_no_override_renders_builtin_prompt",
+    "tests/test_agent_tool_registration.py::test_per_call_extra_tools_reject_duplicate_registered_names",
+    "tests/test_agent_tool_registration.py::test_per_call_extra_tools_stack_with_registry",
+    "tests/test_agent_tool_registration.py::test_register_agent_tools_is_deduped",
+    "tests/test_agent_tool_registration.py::test_register_agent_tools_rejects_duplicate_names",
+    "tests/test_agent_tool_registration.py::test_registered_tools_appear_before_lifecycle_tool"
+   ]
+  },
+  "B1": {
+   "files": [
+    "tests/test_agent_tool_registration.py",
+    "tests/test_execution.py"
+   ],
+   "fail_to_pass": [
+    "tests/test_agent_tool_registration.py::test_root_ends_with_the_given_finish_tool",
+    "tests/test_execution.py::test_nudge_names_the_root_finish_tool"
+   ]
+  },
+  "B2": {
+   "files": [
+    "tests/test_agent_tool_registration.py"
+   ],
+   "fail_to_pass": [
+    "tests/test_agent_tool_registration.py::test_report_tool_replaces_create_vulnerability_report"
+   ]
+  }
+ },
+ "regression": {
+  "source": "S+A full test suite, pass-to-pass on S+A, minus A's fail-to-pass",
+  "count": 142,
+  "ids_sha256": "74b410573493f09a77acfa1140afa2c5dbb0ce31ffac3786ef4ab3fccce9bddb"
+ },
+ "python": "3.12.6",
+ "requirements": {
+  "file": "requirements-strix-pinned.txt",
+  "sha256": "f5abfec544136f671c89b6e5986c34705796d0ca2ed8a33efba465261cf71c25"
+ },
+ "repeats": 3,
+ "runs": [
+  {
+   "S:A": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 7,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B1": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 2,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B2": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 1,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:B1": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 2,
+    "passed": 2,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:B2": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 1,
+    "passed": 1,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   }
+  },
+  {
+   "S:A": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 7,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B1": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 2,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B2": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 1,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:B1": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 2,
+    "passed": 2,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:B2": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 1,
+    "passed": 1,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   }
+  },
+  {
+   "S:A": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 7,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B1": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 2,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B2": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 1,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:B1": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 2,
+    "passed": 2,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 7,
+    "passed": 7,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:B2": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 1,
+    "passed": 1,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 142,
+    "passed": 142,
+    "missing": 0,
+    "ok": true
+   }
+  }
+ ],
+ "stable_across_repeats": true,
+ "all_checks_pass": true,
+ "b1_b2_compatibility": {
+  "apply_together": false,
+  "method": "B1 port applied to S+A, then B2 port checked on the result",
+  "detail": "error: patch failed: strix/agents/factory.py:403\nerror: strix/agents/factory.py: patch does not apply\nerror: patch failed: strix/core/runner.py:39\nerror: strix/core/runner.py: patch does not apply"
+ },
+ "changed_source_lines": {
+  "B1": 22,
+  "B2": 32
+ },
+ "changed_line_ratio": 1.45,
+ "criterion3": {
+  "blame": {
+   "B1": true,
+   "B2": true
+  },
+  "needs_A_functionally": {
+   "B1": false,
+   "B2": false
+  }
+ }
+}

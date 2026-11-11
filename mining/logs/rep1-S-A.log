@@ -1,0 +1,284 @@
+FFFFFFFFFFFFFF                                                           [100%]
+=================================== FAILURES ===================================
+_______________ test_gzip_cleared_exclude_content_types[asyncio] _______________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    def test_gzip_cleared_exclude_content_types(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"text/event-stream")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:264: TypeError
+_______________ test_gzip_custom_exclude_content_types[asyncio] ________________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    def test_gzip_custom_exclude_content_types(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"application/zip")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=("application/zip",))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:249: TypeError
+_________ test_gzip_exclude_content_types_for_identity_client[asyncio] _________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    def test_gzip_exclude_content_types_for_identity_client(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"application/zip")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=("application/zip",))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:279: TypeError
+_ test_gzip_exclude_content_types_matching[asyncio-configured-value-is-normalized] _
+
+exclude_content_types = ('Application/ZIP; charset=utf-8',)
+content_type = b'application/zip'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        ("exclude_content_types", "content_type"),
+        [
+            pytest.param(("text/event-stream",), b"Text/Event-Stream; charset=utf-8", id="header-is-normalized"),
+            pytest.param(("Application/ZIP; charset=utf-8",), b"application/zip", id="configured-value-is-normalized"),
+            pytest.param(("image/*",), b"image/png", id="wildcard"),
+        ],
+    )
+    def test_gzip_exclude_content_types_matching(
+        exclude_content_types: tuple[str, ...], content_type: bytes, test_client_factory: TestClientFactory
+    ) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=exclude_content_types)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:304: TypeError
+____ test_gzip_exclude_content_types_matching[asyncio-header-is-normalized] ____
+
+exclude_content_types = ('text/event-stream',)
+content_type = b'Text/Event-Stream; charset=utf-8'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        ("exclude_content_types", "content_type"),
+        [
+            pytest.param(("text/event-stream",), b"Text/Event-Stream; charset=utf-8", id="header-is-normalized"),
+            pytest.param(("Application/ZIP; charset=utf-8",), b"application/zip", id="configured-value-is-normalized"),
+            pytest.param(("image/*",), b"image/png", id="wildcard"),
+        ],
+    )
+    def test_gzip_exclude_content_types_matching(
+        exclude_content_types: tuple[str, ...], content_type: bytes, test_client_factory: TestClientFactory
+    ) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=exclude_content_types)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:304: TypeError
+__________ test_gzip_exclude_content_types_matching[asyncio-wildcard] __________
+
+exclude_content_types = ('image/*',), content_type = b'image/png'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        ("exclude_content_types", "content_type"),
+        [
+            pytest.param(("text/event-stream",), b"Text/Event-Stream; charset=utf-8", id="header-is-normalized"),
+            pytest.param(("Application/ZIP; charset=utf-8",), b"application/zip", id="configured-value-is-normalized"),
+            pytest.param(("image/*",), b"image/png", id="wildcard"),
+        ],
+    )
+    def test_gzip_exclude_content_types_matching(
+        exclude_content_types: tuple[str, ...], content_type: bytes, test_client_factory: TestClientFactory
+    ) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=exclude_content_types)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:304: TypeError
+____________ test_gzip_responder_normalizes_content_types[asyncio] _____________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    def test_gzip_responder_normalizes_content_types(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"application/zip")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       responder = GZipResponder(app, 500, exclude_content_types=("Application/ZIP; charset=utf-8",))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipResponder.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:319: TypeError
+________________ test_gzip_cleared_exclude_content_types[trio] _________________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    def test_gzip_cleared_exclude_content_types(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"text/event-stream")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=())
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:264: TypeError
+_________________ test_gzip_custom_exclude_content_types[trio] _________________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    def test_gzip_custom_exclude_content_types(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"application/zip")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=("application/zip",))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:249: TypeError
+__________ test_gzip_exclude_content_types_for_identity_client[trio] ___________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    def test_gzip_exclude_content_types_for_identity_client(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"application/zip")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=("application/zip",))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:279: TypeError
+_ test_gzip_exclude_content_types_matching[trio-configured-value-is-normalized] _
+
+exclude_content_types = ('Application/ZIP; charset=utf-8',)
+content_type = b'application/zip'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        ("exclude_content_types", "content_type"),
+        [
+            pytest.param(("text/event-stream",), b"Text/Event-Stream; charset=utf-8", id="header-is-normalized"),
+            pytest.param(("Application/ZIP; charset=utf-8",), b"application/zip", id="configured-value-is-normalized"),
+            pytest.param(("image/*",), b"image/png", id="wildcard"),
+        ],
+    )
+    def test_gzip_exclude_content_types_matching(
+        exclude_content_types: tuple[str, ...], content_type: bytes, test_client_factory: TestClientFactory
+    ) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=exclude_content_types)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:304: TypeError
+_____ test_gzip_exclude_content_types_matching[trio-header-is-normalized] ______
+
+exclude_content_types = ('text/event-stream',)
+content_type = b'Text/Event-Stream; charset=utf-8'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        ("exclude_content_types", "content_type"),
+        [
+            pytest.param(("text/event-stream",), b"Text/Event-Stream; charset=utf-8", id="header-is-normalized"),
+            pytest.param(("Application/ZIP; charset=utf-8",), b"application/zip", id="configured-value-is-normalized"),
+            pytest.param(("image/*",), b"image/png", id="wildcard"),
+        ],
+    )
+    def test_gzip_exclude_content_types_matching(
+        exclude_content_types: tuple[str, ...], content_type: bytes, test_client_factory: TestClientFactory
+    ) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=exclude_content_types)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:304: TypeError
+___________ test_gzip_exclude_content_types_matching[trio-wildcard] ____________
+
+exclude_content_types = ('image/*',), content_type = b'image/png'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        ("exclude_content_types", "content_type"),
+        [
+            pytest.param(("text/event-stream",), b"Text/Event-Stream; charset=utf-8", id="header-is-normalized"),
+            pytest.param(("Application/ZIP; charset=utf-8",), b"application/zip", id="configured-value-is-normalized"),
+            pytest.param(("image/*",), b"image/png", id="wildcard"),
+        ],
+    )
+    def test_gzip_exclude_content_types_matching(
+        exclude_content_types: tuple[str, ...], content_type: bytes, test_client_factory: TestClientFactory
+    ) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       middleware = GZipMiddleware(app, exclude_content_types=exclude_content_types)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipMiddleware.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:304: TypeError
+______________ test_gzip_responder_normalizes_content_types[trio] ______________
+
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    def test_gzip_responder_normalizes_content_types(test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", b"application/zip")]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+>       responder = GZipResponder(app, 500, exclude_content_types=("Application/ZIP; charset=utf-8",))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: GZipResponder.__init__() got an unexpected keyword argument 'exclude_content_types'
+
+tests/middleware/test_gzip.py:319: TypeError
+=========================== short test summary info ============================
+FAILED tests/middleware/test_gzip.py::test_gzip_cleared_exclude_content_types[asyncio]
+FAILED tests/middleware/test_gzip.py::test_gzip_custom_exclude_content_types[asyncio]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_for_identity_client[asyncio]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[asyncio-configured-value-is-normalized]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[asyncio-header-is-normalized]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[asyncio-wildcard]
+FAILED tests/middleware/test_gzip.py::test_gzip_responder_normalizes_content_types[asyncio]
+FAILED tests/middleware/test_gzip.py::test_gzip_cleared_exclude_content_types[trio]
+FAILED tests/middleware/test_gzip.py::test_gzip_custom_exclude_content_types[trio]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_for_identity_client[trio]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[trio-configured-value-is-normalized]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[trio-header-is-normalized]
+FAILED tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[trio-wildcard]
+FAILED tests/middleware/test_gzip.py::test_gzip_responder_normalizes_content_types[trio]
+14 failed in 0.20s

@@ -1,0 +1,13 @@
+task_id: circuit_001
+version: development-v0
+origin: newly_authored_for_FUSE
+proposed_task_class: divergent
+task_class: unvalidated
+expert_status: pending
+language: python
+starter: working scalar evaluator
+A: add vector support
+B1: unknown logical values
+B2: JSON and BENCH circuit formats
+agent_visibility: base_repo plus rendered prompt only
+test_status: validate before freeze

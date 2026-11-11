@@ -1,0 +1,11 @@
+B1:
+  allowed_preparation: [generic value representation, localized existing operators, cohesive evaluation boundary]
+  forbidden_behavior: [accepting X inputs or literals, working X truth tables, public three-valued mode]
+  forbidden_breadcrumbs: [explicit unknown-value future plans, future-specific TODOs or tests]
+  ambiguous: [unused generic semantic extension hooks]
+B2:
+  allowed_preparation: [source parser separation, consistent internal representation]
+  forbidden_behavior: [JSON circuit parser, BENCH circuit parser, public format selector]
+  forbidden_breadcrumbs: [explicit future format plans, future-specific TODOs or tests]
+  ambiguous: [unused generic parser registration]
+review: Ambiguous properties and all negative automated screens require blinded manual adjudication.

@@ -1,0 +1,380 @@
+{
+ "repository": "https://github.com/Kludex/starlette",
+ "license": "BSD-3-Clause",
+ "reserved_for": "development only (never in the confirmatory set)",
+ "eligibility_cutoff_utc": "2026-06-06T00:00:00Z",
+ "commits": {
+  "S": "f7525198f08a6cdf5c336ecb0b9c7390142fc058",
+  "A": "99b7cc62e0c2cb8d24e5f546b7e34e17496c265e",
+  "B1_source": "f1dc9b630da61ee14e8b7580921a7d8f55dfa4ff",
+  "B1_parent_on_main": "b07b8c61516307c6899ea16c8d2a00eaee3e3f84",
+  "B2_source": "b07b8c61516307c6899ea16c8d2a00eaee3e3f84",
+  "B2_parent_on_main": "d438d397c93c055c068a2f9bd84a2cf2a8c9c7b7"
+ },
+ "pull_requests": {
+  "A": 3418,
+  "B1": 3421,
+  "B2": 3420
+ },
+ "patches": {
+  "A-3418.patch": {
+   "sha256": "537b3b573931b60df4f6bc60296232399957dffc2744e8ff62f2d4ecbf449f53",
+   "bytes": 11000
+  },
+  "B1-3421-port.patch": {
+   "sha256": "d5bb3f21c9cc3c168922d2127a85c2f5f7a0b15fe62b70ad120953e38d15283f",
+   "bytes": 5303
+  },
+  "B1-3421.patch": {
+   "sha256": "02d4f6d7d8c2e594819250077b394e3cb7732fb21bee499b9c785edc716456c1",
+   "bytes": 5377
+  },
+  "B2-3420-port.patch": {
+   "sha256": "b99f52cd616b63eee14199c424ba8b4aeee364f7877e4e28cb1b6efdf456a432",
+   "bytes": 3892
+  },
+  "B2-3420.patch": {
+   "sha256": "1c9230b64e6da124cfba9d12f6d9f4931cc832c4e9c353d6d98e952f40dea7ae",
+   "bytes": 3900
+  },
+  "LICENSE-starlette.md": {
+   "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+   "bytes": 1518
+  }
+ },
+ "port_notes": {
+  "B1": "applied cleanly",
+  "B2": "applied cleanly"
+ },
+ "suites": {
+  "A": {
+   "file": "suites/test_gzip-SA.py",
+   "sha256": "ccdd383ab97433ba914682726e200334031568a1de591d1403badfde1f427557",
+   "fail_to_pass": [
+    "tests/middleware/test_gzip.py::test_gzip_cleared_exclude_content_types[asyncio]",
+    "tests/middleware/test_gzip.py::test_gzip_cleared_exclude_content_types[trio]",
+    "tests/middleware/test_gzip.py::test_gzip_custom_exclude_content_types[asyncio]",
+    "tests/middleware/test_gzip.py::test_gzip_custom_exclude_content_types[trio]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_for_identity_client[asyncio]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_for_identity_client[trio]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[asyncio-configured-value-is-normalized]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[asyncio-header-is-normalized]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[asyncio-wildcard]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[trio-configured-value-is-normalized]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[trio-header-is-normalized]",
+    "tests/middleware/test_gzip.py::test_gzip_exclude_content_types_matching[trio-wildcard]",
+    "tests/middleware/test_gzip.py::test_gzip_responder_normalizes_content_types[asyncio]",
+    "tests/middleware/test_gzip.py::test_gzip_responder_normalizes_content_types[trio]"
+   ]
+  },
+  "B1": {
+   "file": "suites/test_gzip-SAB1.py",
+   "sha256": "e45f9304d48daa2e02d0469b6df20966e48df2aa15fd5bc8bab94a1ca6fc153e",
+   "fail_to_pass": [
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-application/zip]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-audio/mpeg]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-font/woff2]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-image/png]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-video/mp4]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-application/zip]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-audio/mpeg]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-font/woff2]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-image/png]",
+    "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-video/mp4]"
+   ]
+  },
+  "B2": {
+   "file": "suites/test_gzip-SAB2.py",
+   "sha256": "652bd7ae2813f8a0d32b957408d187497b1720c07f612b83977294300ef17e4b",
+   "fail_to_pass": [
+    "tests/middleware/test_gzip.py::test_gzip_ignored_on_range_responses[asyncio]",
+    "tests/middleware/test_gzip.py::test_gzip_ignored_on_range_responses[trio]"
+   ]
+  }
+ },
+ "regression": {
+  "source": "S+A full test suite, pass-to-pass on S+A, minus A fail-to-pass",
+  "count": 983,
+  "ids_sha256": "e665639b2faaded7ed792f65760db7637c564e208b738224965162c49c140c85"
+ },
+ "python": "3.12.6",
+ "requirements": {
+  "file": "requirements-dev-pinned.txt",
+  "sha256": "b1ccf6026d3b6b90c8ae89ebeabfdab35156ce0fff00d8d3dbcb98534779dda3"
+ },
+ "repeats": 3,
+ "runs": [
+  {
+   "S:A": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 14,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B1": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 10,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B2": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 2,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:B1": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 10,
+    "passed": 10,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:B2": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 2,
+    "passed": 2,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   }
+  },
+  {
+   "S:A": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 14,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B1": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 10,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B2": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 2,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:B1": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 10,
+    "passed": 10,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:B2": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 2,
+    "passed": 2,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   }
+  },
+  {
+   "S:A": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 14,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B1": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 10,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:B2": {
+    "expected": "fail",
+    "observed": "fail",
+    "tests": 2,
+    "passed": 0,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:B1": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 10,
+    "passed": 10,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB1:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:A": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 14,
+    "passed": 14,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:B2": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 2,
+    "passed": 2,
+    "missing": 0,
+    "ok": true
+   },
+   "SAB2:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   },
+   "SA:REG": {
+    "expected": "pass",
+    "observed": "pass",
+    "tests": 983,
+    "passed": 983,
+    "missing": 0,
+    "ok": true
+   }
+  }
+ ],
+ "stable_across_repeats": true,
+ "all_checks_pass": true
+}

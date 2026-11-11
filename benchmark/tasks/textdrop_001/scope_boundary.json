@@ -1,0 +1,29 @@
+{
+  "futures": {
+    "B1": {
+      "allowed": [
+        "generic operation context and lifecycle boundaries"
+      ],
+      "forbidden_behavior": [
+        "register/login/logout/account removal",
+        "note ownership checks"
+      ],
+      "forbidden_breadcrumbs": [
+        "identity-specific plans/tests"
+      ]
+    },
+    "B2": {
+      "allowed": [
+        "generic persistence boundary"
+      ],
+      "forbidden_behavior": [
+        "journal backend",
+        "backend selector"
+      ],
+      "forbidden_breadcrumbs": [
+        "future storage plans/tests"
+      ]
+    }
+  },
+  "review": "Both futures are screened. All negative and ambiguous cases require manual adjudication."
+}

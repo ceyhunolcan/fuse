@@ -1,0 +1,33 @@
+[
+  {
+    "source": "INPUT a 1\ny = NOT(a)\nOUTPUT y",
+    "values": {
+      "a": "X"
+    },
+    "expected": {
+      "y": "X"
+    },
+    "format": null,
+    "interpretation": "success is positive evidence of premature functionality"
+  },
+  {
+    "source": "y = AND(0,X)\nOUTPUT y",
+    "values": {},
+    "expected": {
+      "y": "0"
+    },
+    "format": null,
+    "interpretation": "success is positive evidence of premature functionality"
+  },
+  {
+    "source": "INPUT a 3\ny = OR(a,0)\nOUTPUT y",
+    "values": {
+      "a": "01X"
+    },
+    "expected": {
+      "y": "01X"
+    },
+    "format": null,
+    "interpretation": "success is positive evidence of premature functionality"
+  }
+]

@@ -1,0 +1,17 @@
+status: proposed_pending_requirement_only_experts
+scale: {0: absent, 1: partial, 2: clear}
+axes:
+  value_semantics_boundary:
+    favors: B1
+    criterion: Existing value validation and manipulation have a cohesive boundary.
+  operator_semantics_localization:
+    favors: B1
+    criterion: Existing logical operators are localized without scattered Boolean assumptions.
+  parser_evaluator_separation:
+    favors: B2
+    criterion: Existing source parsing is separable from circuit execution.
+  canonical_circuit_representation:
+    favors: B2
+    criterion: Parsed circuits have a consistent representation independent of source text.
+blinding: Raters see base, A, and anonymized patch, not treatment or agent logs.
+warning: Properties can benefit both futures; no gold class hierarchy or mutually exclusive score is imposed.

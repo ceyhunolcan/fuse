@@ -1,0 +1,91 @@
+{
+ "B1": {
+  "removed_or_rewritten_lines": 4,
+  "last_written_by_A": 1,
+  "lines": [
+   {
+    "file": "strix/agents/factory.py",
+    "old_line": 431,
+    "commit": "205e0b370706",
+    "by_A": true,
+    "text": "tools: list[Tool] = [*_BASE_TOOLS, *agent_tools, finish_scan]"
+   },
+   {
+    "file": "strix/core/execution.py",
+    "old_line": 478,
+    "commit": "e8b172bd2a8d",
+    "by_A": false,
+    "text": "finish_tool = \"finish_scan\" if context.get(\"parent_id\") is None else \"agent_finish\""
+   },
+   {
+    "file": "strix/core/runner.py",
+    "old_line": 68,
+    "commit": "629ea60b0225",
+    "by_A": false,
+    "text": "\"\"\"Run or resume one Strix scan against a sandbox.\"\"\""
+   },
+   {
+    "file": "strix/tools/agents_graph/tools.py",
+    "old_line": 523,
+    "commit": "054eedf53f62",
+    "by_A": false,
+    "text": "\"agent_finish is for subagents. Root/main agents must call finish_scan instead\""
+   }
+  ]
+ },
+ "B2": {
+  "removed_or_rewritten_lines": 7,
+  "last_written_by_A": 2,
+  "lines": [
+   {
+    "file": "strix/agents/factory.py",
+    "old_line": 431,
+    "commit": "205e0b370706",
+    "by_A": true,
+    "text": "tools: list[Tool] = [*_BASE_TOOLS, *agent_tools, finish_scan]"
+   },
+   {
+    "file": "strix/agents/factory.py",
+    "old_line": 433,
+    "commit": "205e0b370706",
+    "by_A": true,
+    "text": "tools = [*_BASE_TOOLS, *agent_tools, agent_finish]"
+   },
+   {
+    "file": "strix/agents/prompts/system_prompt.jinja",
+    "old_line": 193,
+    "commit": "96f5c44799f1",
+    "by_A": false,
+    "text": "- A vulnerability is ONLY considered reported when a reporting agent uses create_vulnerability_report with full details."
+   },
+   {
+    "file": "strix/agents/prompts/system_prompt.jinja",
+    "old_line": 194,
+    "commit": "914b98107287",
+    "by_A": false,
+    "text": "- Do NOT patch/fix before reporting: first create the vulnerability report via create_vulnerability_report (by the repor"
+   },
+   {
+    "file": "strix/agents/prompts/system_prompt.jinja",
+    "old_line": 195,
+    "commit": "01ae348da830",
+    "by_A": false,
+    "text": "- DEDUPLICATION: The create_vulnerability_report tool uses LLM-based deduplication. If it rejects your report as a dupli"
+   },
+   {
+    "file": "strix/agents/prompts/system_prompt.jinja",
+    "old_line": 332,
+    "commit": "81ac98e8b97a",
+    "by_A": false,
+    "text": "- **ONLY REPORTING AGENTS** can use create_vulnerability_report tool"
+   },
+   {
+    "file": "strix/core/runner.py",
+    "old_line": 68,
+    "commit": "629ea60b0225",
+    "by_A": false,
+    "text": "\"\"\"Run or resume one Strix scan against a sandbox.\"\"\""
+   }
+  ]
+ }
+}

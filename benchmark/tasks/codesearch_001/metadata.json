@@ -1,0 +1,38 @@
+{
+  "task_id": "codesearch_001",
+  "version": "authored-cpu-draft-v1",
+  "origin": "newly_authored_for_FUSE",
+  "task_class": "unvalidated",
+  "expert_status": "pending",
+  "language": "python",
+  "module": "fusecodesearch",
+  "starter": "Working Python identifier-token search; no JavaScript or multi-token patterns.",
+  "A": "Multilingual exact token search",
+  "B1": "Later add named identifier metavariables, repeated-capture consistency and balanced anonymous wildcard sequences.",
+  "B2": "Later add preview/apply exact-token rewrites with atomic overlap checks and diffs, preserving unmatched source.",
+  "agent_visibility": "base_repo plus rendered prompt only",
+  "test_status": "authored; validate before freeze",
+  "dependencies": "Python standard library only; sandbox runtime compatibility pending",
+  "starter_probe": {
+    "request": {
+      "files": [
+        {
+          "path": "a",
+          "language": "python",
+          "source": "x = 1\n"
+        }
+      ],
+      "pattern": "x"
+    },
+    "expected": {
+      "matches": [
+        {
+          "path": "a",
+          "start": 0,
+          "end": 1,
+          "text": "x"
+        }
+      ]
+    }
+  }
+}

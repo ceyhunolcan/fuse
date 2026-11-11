@@ -1,0 +1,30 @@
+{
+  "futures": {
+    "B1": {
+      "allowed": [
+        "generic token/matching boundaries"
+      ],
+      "forbidden_behavior": [
+        "metavariable captures",
+        "balanced wildcard matching",
+        "pattern_mode request option"
+      ],
+      "forbidden_breadcrumbs": [
+        "future pattern plans/tests"
+      ]
+    },
+    "B2": {
+      "allowed": [
+        "generic source-offset preservation"
+      ],
+      "forbidden_behavior": [
+        "replacement/apply options",
+        "rewrite preview/diffs"
+      ],
+      "forbidden_breadcrumbs": [
+        "future fix plans/tests"
+      ]
+    }
+  },
+  "review": "Both futures are screened. All negative and ambiguous cases require manual adjudication."
+}

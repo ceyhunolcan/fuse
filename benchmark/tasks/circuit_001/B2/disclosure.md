@@ -1,0 +1,1 @@
+A certain later requirement will accept circuits described in JSON and BENCH as well as the existing source format. Equivalent descriptions must give the same logical outputs and validation behavior, while existing source invocations remain compatible. This functionality must remain deferred during the current phase.

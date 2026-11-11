@@ -1,0 +1,24 @@
+[
+  {
+    "source": "{\"inputs\": {\"a\": 1}, \"gates\": [], \"outputs\": [\"a\"]}",
+    "values": {
+      "a": "1"
+    },
+    "expected": {
+      "a": "1"
+    },
+    "format": "json",
+    "interpretation": "success is positive evidence of premature functionality"
+  },
+  {
+    "source": "INPUT(a)\ny = NOT(a)\nOUTPUT(y)",
+    "values": {
+      "a": "1"
+    },
+    "expected": {
+      "y": "0"
+    },
+    "format": "bench",
+    "interpretation": "success is positive evidence of premature functionality"
+  }
+]

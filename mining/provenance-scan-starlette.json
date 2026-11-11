@@ -1,0 +1,26 @@
+{
+ "repo": "starlette",
+ "cutoff": "2026-06-06",
+ "commits": 162,
+ "triples": [
+  {
+   "A": {
+    "pr": 3329,
+    "title": "Enforce `max_fields` and `max_part_size` in `FormParser` (#3329)",
+    "lines": 157
+   },
+   "Bs": [
+    {
+     "pr": 3628,
+     "title": "Close `Request.stream()` generators with `aclosing` (#3628)",
+     "lines_of_A_modified": 7
+    },
+    {
+     "pr": 3331,
+     "title": "Enforce `FormParser` limits in parser callbacks (#3331)",
+     "lines_of_A_modified": 8
+    }
+   ]
+  }
+ ]
+}

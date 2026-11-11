@@ -1,0 +1,27 @@
+FUSE (Future-conditioned Software Evolution): development tasks and agent harness
+Copyright 2026 Ceyhun Olcan
+
+Licensed under the Apache License, Version 2.0 (see LICENSE), except where noted below.
+
+Task families adapted from SlopCodeBench:
+  SlopCodeBench problem repository, commit 9cd9ca3a51c3d3e2a99d2488a25baf73a2204451,
+  https://github.com/gabeorlanski/scb-problems, licensed under the Apache License, Version 2.0
+  (third_party/SlopCodeBench-LICENSE).
+  G. Orlanski et al., "SlopCodeBench: Benchmarking How Coding Agents Degrade Over
+  Long-Horizon Iterative Tasks", arXiv:2603.24755.
+
+Modifications: FUSE adapts the Circuit, CodeSearch and TextDrop task concepts into compact tasks,
+each with a current requirement and two alternative futures. All requirements, starter repositories,
+reference implementations, hidden test suites, scope boundaries and graders in benchmark/tasks were
+written for FUSE. They are not SlopCodeBench problems, and results obtained with them are not
+SlopCodeBench scores. The pinned upstream CITATION.cff (third_party/SlopCodeBench-CITATION.cff) states MIT;
+the repository LICENSE (Apache-2.0) is treated as operative.
+
+Mined development triples (mining/):
+  mining/patches and mining/suites contain code and tests from Kludex/starlette
+  (https://github.com/Kludex/starlette), BSD-3-Clause; see mining/patches/LICENSE-starlette.md.
+  mining/strix/patches and mining/strix/suites contain code and tests from usestrix/strix
+  (https://github.com/usestrix/strix), Apache-2.0; see mining/strix/patches/LICENSE-strix.txt.
+  These files keep their upstream licences.
+
+Credentials appearing in the TextDrop test suites (for example "password1") are synthetic test fixtures.

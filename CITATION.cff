@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use these tasks or this harness, please cite the paper below."
+title: "FUSE: development tasks and agent harness"
+authors:
+  - family-names: Olcan
+    given-names: Ceyhun
+    affiliation: Dartmouth College
+    orcid: "https://orcid.org/0000-0002-6326-6071"
+license: Apache-2.0
+repository-code: "https://github.com/ceyhunolcan/fuse"
+preferred-citation:
+  type: conference-paper
+  title: "Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next"
+  authors:
+    - family-names: Olcan
+      given-names: Ceyhun
+  collection-title: "Kaggle Gemma 4 Developer Agent Paper Track"
+  year: 2026
+  url: "https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip"

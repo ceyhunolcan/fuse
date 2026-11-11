@@ -1,0 +1,28 @@
+{
+  "status": "proposed_pending_independent_review",
+  "scale": {
+    "0": "absent",
+    "1": "partial",
+    "2": "clear"
+  },
+  "axes": {
+    "identity_context_boundary": {
+      "favors": "B1",
+      "criterion": "Current operations have cohesive context and validation boundaries."
+    },
+    "note_lifecycle": {
+      "favors": "B1",
+      "criterion": "Note lookup and mutation are localized."
+    },
+    "persistence_boundary": {
+      "favors": "B2",
+      "criterion": "Serialization/storage representation is separated from note behavior."
+    },
+    "rendering_independence": {
+      "favors": "B2",
+      "criterion": "Rendering consumes logical notes rather than storage internals."
+    }
+  },
+  "blinding": "See base, A and anonymized patch; no disclosure labels, logs or future files.",
+  "warning": "Multiple valid designs allowed; properties can benefit both futures. No gold class hierarchy."
+}

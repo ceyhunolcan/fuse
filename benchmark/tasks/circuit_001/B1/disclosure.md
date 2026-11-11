@@ -1,0 +1,1 @@
+A certain later requirement will allow a logical value X, meaning unknown, alongside 0 and 1. Circuits will use these values in scalar and vector inputs and literals, and every existing operator will obey three-valued logic. This functionality must remain deferred during the current phase.

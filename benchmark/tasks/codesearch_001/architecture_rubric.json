@@ -1,0 +1,28 @@
+{
+  "status": "proposed_pending_independent_review",
+  "scale": {
+    "0": "absent",
+    "1": "partial",
+    "2": "clear"
+  },
+  "axes": {
+    "token_representation": {
+      "favors": "both",
+      "criterion": "Languages share a stable matching token representation."
+    },
+    "matching_boundary": {
+      "favors": "both",
+      "criterion": "Pattern interpretation is distinct from source loading."
+    },
+    "pattern_semantics": {
+      "favors": "B1",
+      "criterion": "Current match rules are localized."
+    },
+    "source_provenance": {
+      "favors": "B2",
+      "criterion": "Matches retain reliable offsets and original-source identity."
+    }
+  },
+  "blinding": "See base, A and anonymized patch; no disclosure labels, logs or future files.",
+  "warning": "Multiple valid designs allowed; properties can benefit both futures. No gold class hierarchy."
+}

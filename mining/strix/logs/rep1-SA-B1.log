@@ -1,0 +1,30 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__________________ test_root_ends_with_the_given_finish_tool ___________________
+
+    def test_root_ends_with_the_given_finish_tool() -> None:
+>       root = factory.build_strix_agent(is_root=True, finish_tool=_tool("finish_pr_review"))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: build_strix_agent() got an unexpected keyword argument 'finish_tool'
+
+tests/test_agent_tool_registration.py:52: TypeError
+____________________ test_nudge_names_the_root_finish_tool _____________________
+
+    @pytest.mark.asyncio
+    async def test_nudge_names_the_root_finish_tool() -> None:
+        from strix.core.execution import _append_noninteractive_tool_required_message
+    
+>       items = await _append_noninteractive_tool_required_message(
+            session=None,
+            context={"parent_id": None},
+            attempt=1,
+            limit=3,
+            root_finish_tool="finish_pr_review",
+        )
+E       TypeError: _append_noninteractive_tool_required_message() got an unexpected keyword argument 'root_finish_tool'
+
+tests/test_execution.py:51: TypeError
+=========================== short test summary info ============================
+FAILED tests/test_agent_tool_registration.py::test_root_ends_with_the_given_finish_tool
+FAILED tests/test_execution.py::test_nudge_names_the_root_finish_tool - TypeE...
+2 failed in 1.63s

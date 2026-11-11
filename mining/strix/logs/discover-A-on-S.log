@@ -1,0 +1,74 @@
+EEEEEEE                                                                  [100%]
+==================================== ERRORS ====================================
+____________ ERROR at setup of test_register_agent_tools_is_deduped ____________
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+_____ ERROR at setup of test_registered_tools_appear_before_lifecycle_tool _____
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+_______ ERROR at setup of test_per_call_extra_tools_stack_with_registry ________
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+_____ ERROR at setup of test_register_agent_tools_rejects_duplicate_names ______
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+_ ERROR at setup of test_per_call_extra_tools_reject_duplicate_registered_names _
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+________ ERROR at setup of test_instructions_override_is_used_verbatim _________
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+__________ ERROR at setup of test_no_override_renders_builtin_prompt ___________
+
+    @pytest.fixture(autouse=True)
+    def _reset_registry() -> object:
+>       saved = list(factory._EXTRA_TOOLS)
+                     ^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: module 'strix.agents.factory' has no attribute '_EXTRA_TOOLS'
+
+tests/test_agent_tool_registration.py:22: AttributeError
+=========================== short test summary info ============================
+ERROR tests/test_agent_tool_registration.py::test_register_agent_tools_is_deduped
+ERROR tests/test_agent_tool_registration.py::test_registered_tools_appear_before_lifecycle_tool
+ERROR tests/test_agent_tool_registration.py::test_per_call_extra_tools_stack_with_registry
+ERROR tests/test_agent_tool_registration.py::test_register_agent_tools_rejects_duplicate_names
+ERROR tests/test_agent_tool_registration.py::test_per_call_extra_tools_reject_duplicate_registered_names
+ERROR tests/test_agent_tool_registration.py::test_instructions_override_is_used_verbatim
+ERROR tests/test_agent_tool_registration.py::test_no_override_renders_builtin_prompt
+7 errors in 2.00s

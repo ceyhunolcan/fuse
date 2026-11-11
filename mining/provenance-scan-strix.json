@@ -1,0 +1,328 @@
+{
+ "repo": "strix",
+ "cutoff": "2026-06-06",
+ "commits": 216,
+ "triples": [
+  {
+   "A": {
+    "pr": 977,
+    "title": "fix(llm): cap the tool calls one assistant response may queue (#977)",
+    "lines": 330
+   },
+   "Bs": [
+    {
+     "pr": 1353,
+     "title": "feat(llm): structured per-attempt provider request log with provider request ids (#1353)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 978,
+     "title": "fix(llm): abandon a model stream that stops producing events (#978)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 957,
+    "title": "fix(tools): accept both the string and structured form of every tool argument (#957)",
+    "lines": 214
+   },
+   "Bs": [
+    {
+     "pr": 1164,
+     "title": "Treat literal 'null'/'none' strings as absent for optional tool args (#1164)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 1024,
+     "title": "fix(tools): coerce an empty-string list/dict argument to an empty container (#1024)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 956,
+    "title": "feat(config): accept STRIX_REASONING_EFFORT=max for providers that support it (#956)",
+    "lines": 48
+   },
+   "Bs": [
+    {
+     "pr": 1187,
+     "title": "fix(llm): bind dedupe credentials to a provider; send reasoning=max via extra_body (#1187)",
+     "lines_of_A_modified": 8
+    },
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 937,
+    "title": "fix(llm): pass LLM_EXTRA_HEADERS through ModelSettings so they reach the agent loop (#937)",
+    "lines": 276
+   },
+   "Bs": [
+    {
+     "pr": 1495,
+     "title": "feat(llm): extra request-body fields via LLM_EXTRA_BODY (#1495)",
+     "lines_of_A_modified": 6
+    },
+    {
+     "pr": 1187,
+     "title": "fix(llm): bind dedupe credentials to a provider; send reasoning=max via extra_body (#1187)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 1045,
+     "title": "fix(llm): send OpenRouter app attribution on the request itself (#1045)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 9
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 772,
+    "title": "feat(llm): enable Bedrock/Anthropic prompt caching for Claude models (#772)",
+    "lines": 190
+   },
+   "Bs": [
+    {
+     "pr": 1382,
+     "title": "perf(prompt): load requested skills after a cache point (#1382)",
+     "lines_of_A_modified": 10
+    },
+    {
+     "pr": 1186,
+     "title": "fix(llm): only attach prompt-cache points on routes LiteLLM serves (#1186)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 823,
+    "title": "feat(dedupe): add dedicated deduplication model (#823)",
+    "lines": 214
+   },
+   "Bs": [
+    {
+     "pr": 1187,
+     "title": "fix(llm): bind dedupe credentials to a provider; send reasoning=max via extra_body (#1187)",
+     "lines_of_A_modified": 27
+    },
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 937,
+     "title": "fix(llm): pass LLM_EXTRA_HEADERS through ModelSettings so they reach the agent loop (#937)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 779,
+    "title": "fix(core): bound per-agent image memory (proactive budget + inherited-context scrub) (#779)",
+    "lines": 194
+   },
+   "Bs": [
+    {
+     "pr": 1466,
+     "title": "feat(llm): scrub images from every request to a text-only model (#1466)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 1022,
+     "title": "fix(sessions): open a sqlite connection per operation, not per thread (#1022)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 923,
+     "title": "fix: pre-v1-style lifecycle resilience \u2014 mailbox delivery, uniform revival, unexitable runner, waiting timeout, broader retries, crash-safe identity (#923)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 766,
+    "title": "fix(runtime): stage symlink-safe copies for LocalDir uploads (#766)",
+    "lines": 291
+   },
+   "Bs": [
+    {
+     "pr": 958,
+     "title": "feat(runtime): mount local targets instead of copying them in (#958)",
+     "lines_of_A_modified": 143
+    },
+    {
+     "pr": 857,
+     "title": "runtime: resolve staged local-dir path to avoid symlink rejection on macOS (#857)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 586,
+    "title": "Warn when configured LLM is not frontier-recommended (#586)",
+    "lines": 244
+   },
+   "Bs": [
+    {
+     "pr": 1280,
+     "title": "fix(models): frontier model check matches the model name only, never the provider route (#1280)",
+     "lines_of_A_modified": 43
+    },
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 29
+    },
+    {
+     "pr": 854,
+     "title": "Sign in with a ChatGPT subscription for inference (#854)",
+     "lines_of_A_modified": 8
+    },
+    {
+     "pr": 801,
+     "title": "fix(report): restore cost tracking for OpenRouter and other LiteLLM-routed models (#801)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 750,
+    "title": "Add root scan prompt options (#750)",
+    "lines": 244
+   },
+   "Bs": [
+    {
+     "pr": 1443,
+     "title": "prompts: let the verified user define and change scope in chat (#1443)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 1375,
+     "title": "perf(prompt): put per-run scope at the end of the system prompt (#1375)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 1175,
+     "title": "Reach MCP tools on demand instead of registering every one (#1175)",
+     "lines_of_A_modified": 9
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 733,
+    "title": "Allow scan agent tool registration (#733)",
+    "lines": 165
+   },
+   "Bs": [
+    {
+     "pr": 1550,
+     "title": "feat(agents): let callers choose the report tool (#1550)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 1496,
+     "title": "feat(agents): let callers choose the top-level agent's finish tool (#1496)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 588,
+    "title": "fix(providers): declare bedrock + vertex extras and add provider import-error hints (#588)",
+    "lines": 208
+   },
+   "Bs": [
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 854,
+     "title": "Sign in with a ChatGPT subscription for inference (#854)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 711,
+    "title": "Add target list CLI option (#711)",
+    "lines": 232
+   },
+   "Bs": [
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 22
+    },
+    {
+     "pr": 958,
+     "title": "feat(runtime): mount local targets instead of copying them in (#958)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 854,
+     "title": "Sign in with a ChatGPT subscription for inference (#854)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 576,
+    "title": "Add configurable token / cost usage limits (#576)",
+    "lines": 374
+   },
+   "Bs": [
+    {
+     "pr": 1025,
+     "title": "fix(runner): settle child agents before closing sessions at wind-down (#1025)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 941,
+     "title": "feat(tui): replace Textual with a Go/Bubble Tea interface (#941)",
+     "lines_of_A_modified": 19
+    },
+    {
+     "pr": 893,
+     "title": "feat(runtime): graduated wrap-up warnings, budget reserve, and interactive budget pause/continue (#893)",
+     "lines_of_A_modified": 14
+    },
+    {
+     "pr": 801,
+     "title": "fix(report): restore cost tracking for OpenRouter and other LiteLLM-routed models (#801)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 586,
+     "title": "Warn when configured LLM is not frontier-recommended (#586)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  }
+ ]
+}

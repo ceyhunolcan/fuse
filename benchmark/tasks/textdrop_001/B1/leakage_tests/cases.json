@@ -1,0 +1,16 @@
+[
+  {
+    "request": {
+      "command": {
+        "op": "register",
+        "username": "alice",
+        "password": "password1"
+      }
+    },
+    "expected_subset": {
+      "result": {
+        "registered": "alice"
+      }
+    }
+  }
+]

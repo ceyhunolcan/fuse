@@ -1,0 +1,10 @@
+3407 2026-08-04T12:49:30Z a375798c1b4296c2ed3be75fe9c8fbd2519835ac | Lazily allocate GZipMiddleware compression resources | starlette/middleware/gzip.py
+3410 2026-08-05T09:19:18Z cb824a1c7d67924fc762bfc12359139892385b18 | Offload large GZip compression | docs/middleware.md,starlette/middleware/gzip.py,tests/middleware/test_gzip.py
+3411 2026-08-05T07:31:08Z 7ed6b26a9ec541511b37d0637d91792e3a41a5bc | Use `zlib.compressobj` instead of `GzipFile` in `GZipMiddleware` | starlette/middleware/gzip.py
+3415 2026-08-05T15:12:14Z 152cef477111a16c79fe0195126e094633627576 | Default `thread_minimum_size` in `GZipResponder` | starlette/middleware/gzip.py
+3418 2026-08-06T20:33:12Z 99b7cc62e0c2cb8d24e5f546b7e34e17496c265e | Add `exclude_content_types` parameter to `GZipMiddleware` | docs/middleware.md,starlette/middleware/gzip.py,tests/middleware/test_gzip.py
+3419 2026-08-07T08:25:21Z d438d397c93c055c068a2f9bd84a2cf2a8c9c7b7 | Flush GZip output for each streamed chunk | docs/middleware.md,starlette/middleware/gzip.py,tests/middleware/test_gzip.py
+3420 2026-08-07T08:25:22Z b07b8c61516307c6899ea16c8d2a00eaee3e3f84 | Skip compression of partial responses in `GZipMiddleware` | docs/middleware.md,starlette/middleware/gzip.py,tests/middleware/test_gzip.py
+3421 2026-08-07T08:25:23Z f1dc9b630da61ee14e8b7580921a7d8f55dfa4ff | Expand default excluded content types in `GZipMiddleware` | docs/middleware.md,starlette/middleware/gzip.py,tests/middleware/test_gzip.py
+3565 2026-10-03T10:35:57Z 6beaa2e39d3381e1d7ddb89d4cc7cbb8c7ac0961 | Preserve response trailers through GZipMiddleware | docs/middleware.md,starlette/middleware/gzip.py,tests/middleware/test_gzip.py
+3631 2026-10-13T07:45:00Z 5b544ced7345d8b2315419ecaded4b52bffe6b76 | Send response start immediately when GZipMiddleware cannot compress | starlette/middleware/gzip.py,tests/middleware/test_gzip.py

@@ -1,0 +1,162 @@
+3323 2026-06-08 +21/-14 Add `httpx2` to the `full` extra
+3322 2026-06-10 +5/-10 Adjust testclient typing and warnings
+3317 2026-06-10 +8/-1 Fix IndexError in URL.replace() on a URL with no authority
+3204 2026-06-10 +2/-2 docs: replace inline ASGI server list with link to canonical implemen…
+3285 2026-06-10 +3/-3 Annotate URLPath protocol parameter with Literal
+2830 2026-06-10 +84/-33 avoid collapsing exception groups from user code
+3193 2026-06-10 +4/-1 Use `removeprefix` to strip weak ETag indicator in `is_not_modified`
+3326 2026-06-11 +41/-10 Build `request.url` from structured components
+3327 2026-06-11 +18/-1 Version 1.3.0
+3119 2026-06-11 +22/-12 Use `StarletteDeprecationWarning` instead of `DeprecationWarning`
+3329 2026-06-12 +154/-3 Enforce `max_fields` and `max_part_size` in `FormParser`
+3331 2026-06-12 +39/-11 Enforce `FormParser` limits in parser callbacks
+3330 2026-06-12 +8/-1 Version 1.3.1
+3334 2026-06-16 +1/-1 docs: fix broken uvicorn link
+3335 2026-06-17 +3/-3 chore(deps): bump python-multipart from 0.0.29 to 0.0.31
+3338 2026-06-18 +34/-34 chore(deps): bump cryptography from 46.0.7 to 48.0.1
+3359 2026-07-03 +1/-1 docs: fix default package static directory name
+3354 2026-07-04 +167/-172 chore(deps): bump the python-packages group with 8 updates
+3353 2026-07-04 +9/-9 chore(deps): bump the github-actions group with 3 updates
+3402 2026-08-02 +11/-11 chore(deps): bump the github-actions group with 5 updates
+3404 2026-08-04 +226/-1 Add GZipMiddleware benchmarks
+3406 2026-08-04 +97/-3 Add GZipMiddleware bypass benchmarks
+3408 2026-08-04 +43/-33 Exercise GZipMiddleware benchmarks through ASGI
+3407 2026-08-04 +20/-3 Lazily allocate GZipMiddleware compression resources
+3411 2026-08-05 +13/-34 Use `zlib.compressobj` instead of `GzipFile` in `GZipMiddleware`
+3409 2026-08-05 +139/-1 Add GZip event-loop responsiveness benchmark
+3412 2026-08-05 +11/-22 Run ASGI benchmarks on a real event loop
+3410 2026-08-05 +92/-9 Offload large GZip compression
+3413 2026-08-05 +12/-1 Version 1.4.0
+3415 2026-08-05 +1/-1 Default `thread_minimum_size` in `GZipResponder`
+3416 2026-08-05 +7/-1 Version 1.4.1
+3393 2026-08-05 +4/-4 chore(deps): bump pymdown-extensions from 10.21.3 to 11.0
+3418 2026-08-06 +114/-8 Add `exclude_content_types` parameter to `GZipMiddleware`
+3419 2026-08-07 +54/-8 Flush GZip output for each streamed chunk
+3420 2026-08-07 +28/-3 Skip compression of partial responses in `GZipMiddleware`
+3421 2026-08-07 +52/-3 Expand default excluded content types in `GZipMiddleware`
+3425 2026-08-07 +124/-1 Add routing benchmarks
+3427 2026-08-08 +16/-1 Version 1.5.0
+3428 2026-08-08 +23/-0 Add Pydantic Logfire banner to the docs
+3386 2026-08-08 +1/-0 fix(tests): skip test_staticfiles_filename_too_long on Windows where os.pathconf is unavailable
+3405 2026-08-08 +276/-272 chore(deps): bump the python-packages group across 1 directory with 8 updates
+3429 2026-08-08 +3/-3 chore(deps): bump pymdown-extensions from 11.0 to 11.0.1
+3389 2026-08-08 +14/-1 Reject inverted single-byte Range like bytes=5-4
+3430 2026-08-08 +24/-1 Limit `FileResponse` to 100 ranges
+3432 2026-08-08 +8/-1 Version 1.5.1
+3431 2026-08-08 +619/-9 Add `max_body_size` to `Starlette` and route classes
+3130 2026-08-08 +94/-8 Expose `http.response.debug` info via response extensions
+3434 2026-08-08 +8/-1 Version 1.6.0
+3437 2026-08-10 +2/-2 Repoint dead TechEmpower benchmarks link to the source repository
+3448 2026-08-22 +176/-70 Add minimal response dispatch benchmarks
+3449 2026-08-22 +151/-0 Add request body benchmarks
+3450 2026-08-22 +242/-19 Add multipart parsing benchmarks
+3453 2026-08-22 +173/-0 Add JSON handling benchmarks
+3454 2026-08-22 +531/-7 Add response, form, and WebSocket benchmarks
+3455 2026-08-22 +0/-3 Run CodSpeed benchmarks in one process
+3462 2026-08-23 +16/-6 Stabilize CodSpeed benchmark state
+3438 2026-08-23 +660/-1 Add OpenTelemetry middleware
+3464 2026-08-23 +2/-0 Normalize glibc CPU dispatch in CodSpeed benchmarks
+3467 2026-08-23 +1/-1 Document `WebSocketException` code as required
+3469 2026-08-23 +1/-1 Normalize glibc string operations in CodSpeed benchmarks
+3463 2026-08-23 +136/-41 Add `excluded_urls` to `OpenTelemetryMiddleware`
+3471 2026-08-25 +88/-18 Support IPv6 hosts in `TrustedHostMiddleware`
+3472 2026-08-26 +203/-15 Reject malformed Host authorities consistently
+3436 2026-08-26 +57/-0 Track session mutations from popitem() and |=
+2767 2026-08-30 +17/-11 Replace RuntimeError with WebSocketDisconnected
+3473 2026-08-30 +1/-1 Fix grammar in Starlette application docstring
+3443 2026-08-30 +1/-1 docs: fix grammar in authentication redirect guidance
+3487 2026-08-30 +9/-0 Document duplicate pull request policy
+3488 2026-08-30 +0/-185 Remove redundant TestClient HTTP method overrides
+3489 2026-08-30 +102/-14 Add support for the QUERY HTTP method
+3492 2026-08-30 +58/-3 Return 400 for invalid multipart parser input
+3501 2026-09-04 +2/-1 Add missing AnyIO imports
+3493 2026-09-04 +8/-8 chore(deps): bump the github-actions group with 5 updates
+3504 2026-09-04 +35/-35 chore(deps): bump cryptography from 48.0.1 to 50.0.0
+3498 2026-09-05 +3/-3 Use anyio.from_thread.BlockingPortal in TestClient
+3508 2026-09-05 +23/-10 Support Python 3.15
+3510 2026-09-05 +31/-0 Support partitioned cookies in SessionMiddleware
+3512 2026-09-05 +9/-22 Drop support for AnyIO 3
+3509 2026-09-05 +355/-303 Update dependencies and replace exact pins with minimum versions
+3513 2026-09-05 +3/-86 Use Ruff to format documentation signatures
+3376 2026-09-05 +38/-1 Support `partitioned` in `Response.delete_cookie`
+3514 2026-09-05 +3/-0 Add documentation heading guidance
+3515 2026-09-05 +6/-0 Document TestClient event loop isolation
+3516 2026-09-05 +52/-15 Include Vary: Origin on all normal CORS responses
+3517 2026-09-05 +30/-8 Vary CORS preflight responses by their request inputs
+3518 2026-09-05 +5/-5 Accept collections in CORS configuration annotations
+3372 2026-09-06 +67/-3 Handle empty and absent payloads in `WebSocketEndpoint.decode()`
+3520 2026-09-06 +79/-12 Add provider parameters to OpenTelemetryMiddleware
+3474 2026-09-06 +2/-0 Document that in-place mutation of nested session values is not tracked
+2858 2026-09-06 +49/-9 Detect blocking calls in coroutines using BlockBuster
+3201 2026-09-06 +30/-11 Handle standalone If-None-Match wildcards in StaticFiles
+3522 2026-09-06 +77/-89 Inline OpenTelemetryResponder and document middleware parameters
+3476 2026-09-06 +55/-0 Run background tasks after the response is sent in `BaseHTTPMiddleware`
+3524 2026-09-06 +16/-1 Stabilize CodSpeed upload buffer allocations
+3271 2026-09-07 +11/-2 Implement `identity` on `SimpleUser` and `UnauthenticatedUser`
+3525 2026-09-07 +2/-2 docs: the test client is built on httpx2, not httpx
+3526 2026-09-07 +2/-2 docs: fix 'its not available' and 'This ensure' wording
+3532 2026-09-12 +18/-0 Reject `WebSocket` requests to `StaticFiles`
+3545 2026-09-12 +16/-2 Allow HTTPException to use non-standard status codes
+3563 2026-09-20 +146/-3 Support HTTP response trailers in TestClient
+3574 2026-09-23 +7/-0 Mark OpenTelemetryMiddleware as experimental
+3568 2026-09-23 +23/-1 Preserve `FileResponse` status for range requests
+3575 2026-09-23 +42/-1 Prepare release 1.7.0
+3576 2026-09-23 +8/-2 Make it possible to run the tests without blockbuster
+3547 2026-09-26 +1/-1 Update link to Authlib's Starlette integration docs
+3573 2026-09-26 +1/-1 docs: add missing article in testclient raise_server_exceptions guidance
+3570 2026-09-26 +1/-1 Fix runnable background-task documentation examples
+3583 2026-09-26 +23/-0 Stop multipart range responses on unexpected EOF
+3592 2026-09-27 +12/-161 Drop Python 3.10 support
+3567 2026-09-27 +17/-0 Ignore Range when If-Range contains a weak ETag
+3523 2026-09-27 +169/-11 Stop file transfers when HTTP clients disconnect
+3596 2026-09-28 +3/-3 docs: remove unnecessary f-strings from endpoint examples
+3607 2026-10-01 +8/-8 Bump the github-actions group with 4 updates
+3609 2026-10-01 +4/-4 Bump urllib3 from 2.7.0 to 2.8.0
+3608 2026-10-03 +190/-171 Bump the python-packages group across 1 directory with 8 updates
+3565 2026-10-03 +56/-5 Preserve response trailers through GZipMiddleware
+3618 2026-10-04 +35/-1 Resolve multipart charset before parsing fields
+3617 2026-10-04 +15/-0 Bracket IPv6 hostnames in `URL.replace()`
+3580 2026-10-04 +4/-4 Correct the documented WebSocket and Request constructor signatures
+3621 2026-10-04 +7/-8 Update broken external documentation links
+3435 2026-10-04 +240/-9 Add HTTP 103 Early Hints support
+3186 2026-10-04 +4/-1 Mark sessions as accessed when popping existing keys
+3628 2026-10-05 +44/-37 Close `Request.stream()` generators with `aclosing`
+3640 2026-10-06 +2/-1 Include allowed methods in StaticFiles 405 responses
+3651 2026-10-09 +12/-1 Emit `Max-Age=0` on session cookie when `max_age=0`
+3631 2026-10-13 +29/-4 Send response start immediately when GZipMiddleware cannot compress
+3660 2026-10-13 +28/-1 Version 1.8.0
+3671 2026-10-17 +30/-1 Escape path delimiters and leading `//` when building URLs
+3622 2026-10-17 +19/-1 Use byte length for typed `memoryview` response bodies
+3491 2026-10-18 +306/-38 Honor streaming responses in TestClient
+3585 2026-10-18 +20/-4 Include `HEAD` in the `Allow` header of `HTTPEndpoint` 405 responses
+3542 2026-10-18 +24/-4 Match host names case-insensitively in `Host` routing and `TrustedHostMiddleware`
+3654 2026-10-18 +8/-0 Add adminsite to the third-party packages
+3674 2026-10-18 +6/-68 Remove unmaintained packages from the third-party packages page
+3675 2026-10-18 +18/-4 Preserve all `Vary` headers in `MutableHeaders.add_vary_header`
+3676 2026-10-18 +15/-1 Version 1.9.0
+3679 2026-10-18 +9/-0 Ignore `Range` on non-GET/HEAD requests in `FileResponse`
+3702 2026-10-21 +13/-6 Bump certifi to 2026.10.19
+3716 2026-10-22 +1/-1 Check NaN and infinity before sign in `FloatConvertor.to_string`
+3718 2026-10-23 +23/-1 Strip `root_path` from `PATH_INFO` only at a segment boundary in `WSGIMiddleware`
+3719 2026-10-23 +4/-0 Reference `AI_POLICY.md` in `AGENTS.md`
+3720 2026-10-23 +14/-1 Strip only matching outer quotes from `Config` env file values
+3205 2026-10-23 +15/-0 Clear exc.__traceback__ after handled exceptions to prevent memory leak
+3721 2026-10-23 +38/-1 Default omitted `http.response.start` headers in middlewares
+3713 2026-10-23 +3/-3 Replace the removed route decorator hint in the host routing docs
+3665 2026-10-23 +2/-2 Compare `Match` members by identity in `Router.app`
+3722 2026-10-23 +2/-2 Compare remaining `Match` members by identity in routing
+3619 2026-10-23 +13/-1 Compare `FormData` with repeated uploads without raising `TypeError`
+3724 2026-10-23 +32/-40 Build URL-encoded form fields in parser callbacks
+3599 2026-10-23 +12/-5 Finalize URL-encoded form parsing at stream exhaustion
+3725 2026-10-23 +22/-7 Substitute URL path parameters in a single pass
+3728 2026-10-24 +24/-1 Version 1.10.0
+3756 2026-10-29 +9/-10 Bump opentelemetry-api from 1.44.0 to 1.45.1
+3768 2026-11-01 +1/-1 Annotate `Response.media_type` as `str | None`
+3769 2026-11-01 +84/-0 Document path-only links and absolute URL safety for `url_for`
+3771 2026-11-01 +391/-315 Bump the python-packages group with 9 updates
+3770 2026-11-01 +12/-12 Bump the github-actions group with 6 updates
+3772 2026-11-01 +37/-1 Use byte length for typed `memoryview` streaming chunks
+3773 2026-11-01 +1/-1 Remove nonexistent `data` argument from `receive_json` docs example
+3736 2026-11-01 +31/-9 Include `functools.partial` endpoints in the generated schema
+3544 2026-11-06 +55/-0 Add `URL.append_query_params()`
+3783 2026-11-06 +10/-1 Support casts without `__name__` in `Config` error message

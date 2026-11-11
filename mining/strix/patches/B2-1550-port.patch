@@ -1,0 +1,172 @@
+diff --git a/strix/agents/factory.py b/strix/agents/factory.py
+index 6564267..bc06d8a 100644
+--- a/strix/agents/factory.py
++++ b/strix/agents/factory.py
+@@ -403,6 +403,7 @@ def build_strix_agent(
+     system_prompt_context: dict[str, Any] | None = None,
+     extra_tools: Sequence[Tool] | None = None,
+     instructions_override: str | None = None,
++    report_tool: Tool = create_vulnerability_report,
+ ) -> SandboxAgent[Any]:
+     """Build a SandboxAgent for either root or child use.
+ 
+@@ -413,6 +414,8 @@ def build_strix_agent(
+             registered via ``register_agent_tools``.
+         instructions_override: Use this verbatim as the system prompt instead
+             of rendering the built-in scan prompt.
++        report_tool: The tool every agent files findings with, in place of
++            ``create_vulnerability_report``.
+     """
+     if instructions_override is not None:
+         instructions = instructions_override
+@@ -424,13 +427,15 @@ def build_strix_agent(
+             is_root=is_root,
+             interactive=interactive,
+             system_prompt_context=system_prompt_context,
++            report_tool=report_tool.name,
+         )
+ 
+     agent_tools = [*_EXTRA_TOOLS, *(extra_tools or [])]
++    base_tools = [report_tool if t is create_vulnerability_report else t for t in _BASE_TOOLS]
+     if is_root:
+-        tools: list[Tool] = [*_BASE_TOOLS, *agent_tools, finish_scan]
++        tools: list[Tool] = [*base_tools, *agent_tools, finish_scan]
+     else:
+-        tools = [*_BASE_TOOLS, *agent_tools, agent_finish]
++        tools = [*base_tools, *agent_tools, agent_finish]
+     _ensure_unique_tool_names(tools)
+ 
+     logger.info(
+@@ -471,6 +476,7 @@ def make_child_factory(
+     interactive: bool = False,
+     chat_completions_tools: bool = False,
+     system_prompt_context: dict[str, Any] | None = None,
++    report_tool: Tool = create_vulnerability_report,
+ ) -> Any:
+     """Return the runner-owned builder used by ``spawn_child_agent``.
+ 
+@@ -489,6 +495,7 @@ def make_child_factory(
+             interactive=interactive,
+             chat_completions_tools=chat_completions_tools,
+             system_prompt_context=system_prompt_context,
++            report_tool=report_tool,
+         )
+ 
+     return _factory
+diff --git a/strix/agents/prompt.py b/strix/agents/prompt.py
+index 5d90217..bf973bd 100644
+--- a/strix/agents/prompt.py
++++ b/strix/agents/prompt.py
+@@ -65,6 +65,7 @@ def render_system_prompt(
+     is_root: bool = False,
+     interactive: bool = False,
+     system_prompt_context: dict[str, Any] | None = None,
++    report_tool: str = "create_vulnerability_report",
+ ) -> str:
+     """Render the system prompt. Returns empty string on template failure."""
+     try:
+@@ -92,6 +93,7 @@ def render_system_prompt(
+             available_skills=get_available_skills(),
+             interactive=interactive,
+             system_prompt_context=system_prompt_context or {},
++            report_tool=report_tool,
+             **skill_content,
+         )
+     except Exception:
+diff --git a/strix/agents/prompts/system_prompt.jinja b/strix/agents/prompts/system_prompt.jinja
+index 4a2f55c..a9d848b 100644
+--- a/strix/agents/prompts/system_prompt.jinja
++++ b/strix/agents/prompts/system_prompt.jinja
+@@ -190,9 +190,9 @@ VALIDATION REQUIREMENTS:
+ - Independent verification through subagent
+ - Document complete attack chain
+ - Keep going until you find something that matters
+-- A vulnerability is ONLY considered reported when a reporting agent uses create_vulnerability_report with full details. Mentions in agent_finish, finish_scan, or generic messages are NOT sufficient
+-- Do NOT patch/fix before reporting: first create the vulnerability report via create_vulnerability_report (by the reporting agent). Only after reporting is completed should fixing/patching proceed
+-- DEDUPLICATION: The create_vulnerability_report tool uses LLM-based deduplication. If it rejects your report as a duplicate, DO NOT attempt to re-submit the same vulnerability. Accept the rejection and move on to testing other areas. The vulnerability has already been reported by another agent
++- A vulnerability is ONLY considered reported when a reporting agent uses {{ report_tool }} with full details. Mentions in agent_finish, finish_scan, or generic messages are NOT sufficient
++- Do NOT patch/fix before reporting: first create the vulnerability report via {{ report_tool }} (by the reporting agent). Only after reporting is completed should fixing/patching proceed
++- DEDUPLICATION: The {{ report_tool }} tool uses LLM-based deduplication. If it rejects your report as a duplicate, DO NOT attempt to re-submit the same vulnerability. Accept the rejection and move on to testing other areas. The vulnerability has already been reported by another agent
+ </execution_guidelines>
+ 
+ <vulnerability_focus>
+@@ -329,7 +329,7 @@ CRITICAL RULES:
+ - **REALISTIC OUTCOMES** - Some tests find nothing, some validations fail
+ - **ONE AGENT = ONE TASK** - Don't let agents do multiple unrelated jobs
+ - **SPAWN REACTIVELY** - Create new agents based on what you discover
+-- **ONLY REPORTING AGENTS** can use create_vulnerability_report tool
++- **ONLY REPORTING AGENTS** can use {{ report_tool }} tool
+ - **AGENT SPECIALIZATION MANDATORY** - Each agent must be highly specialized; prefer 1–3 skills, up to 5 for complex contexts
+ - **NO GENERIC AGENTS** - Avoid creating broad, multi-purpose agents that dilute focus
+ 
+diff --git a/strix/core/runner.py b/strix/core/runner.py
+index 13052b6..0f7d448 100644
+--- a/strix/core/runner.py
++++ b/strix/core/runner.py
+@@ -39,11 +39,13 @@ from strix.core.paths import run_dir_for, runtime_state_dir
+ from strix.core.sessions import open_agent_session
+ from strix.runtime import session_manager
+ from strix.telemetry.logging import set_scan_id, setup_scan_logging
++from strix.tools.reporting.tool import create_vulnerability_report
+ 
+ 
+ if TYPE_CHECKING:
+     from agents.memory import SQLiteSession
+     from agents.result import RunResultBase
++    from agents.tool import Tool
+ 
+ 
+ logger = logging.getLogger(__name__)
+@@ -64,8 +66,13 @@ async def run_strix_scan(
+     model: str | None = None,
+     cleanup_on_exit: bool = True,
+     event_sink: StreamEventSink | None = None,
++    report_tool: Tool = create_vulnerability_report,
+ ) -> RunResultBase | None:
+-    """Run or resume one Strix scan against a sandbox."""
++    """Run or resume one Strix scan against a sandbox.
++
++    ``report_tool`` is the tool every agent files findings with, in place of
++    ``create_vulnerability_report``.
++    """
+     if scan_id is None:
+         scan_id = f"scan-{uuid.uuid4().hex[:8]}"
+ 
+@@ -180,6 +187,7 @@ async def run_strix_scan(
+             interactive=interactive,
+             chat_completions_tools=chat_completions_tools,
+             system_prompt_context=scope_context,
++            report_tool=report_tool,
+         )
+ 
+         if not is_resume:
+@@ -197,6 +205,7 @@ async def run_strix_scan(
+             interactive=interactive,
+             chat_completions_tools=chat_completions_tools,
+             system_prompt_context=scope_context,
++            report_tool=report_tool,
+         )
+ 
+         async def spawn_child_agent(**kwargs: Any) -> dict[str, Any]:
+diff --git a/tests/test_agent_tool_registration.py b/tests/test_agent_tool_registration.py
+index 8c7d67d..6008a70 100644
+--- a/tests/test_agent_tool_registration.py
++++ b/tests/test_agent_tool_registration.py
+@@ -73,6 +73,17 @@ def test_per_call_extra_tools_reject_duplicate_registered_names() -> None:
+         factory.build_strix_agent(is_root=True, extra_tools=[_tool("same_name")])
+ 
+ 
++def test_report_tool_replaces_create_vulnerability_report() -> None:
++    for is_root in (True, False):
++        agent = factory.build_strix_agent(is_root=is_root, report_tool=_tool("file_pr_finding"))
++        names = [t.name for t in agent.tools]
++        assert "file_pr_finding" in names
++        assert "create_vulnerability_report" not in names
++        assert isinstance(agent.instructions, str)
++        assert "file_pr_finding" in agent.instructions
++        assert "create_vulnerability_report" not in agent.instructions
++
++
+ def test_instructions_override_is_used_verbatim() -> None:
+     custom = "You are a scan agent. Follow the provided scope."
+ 

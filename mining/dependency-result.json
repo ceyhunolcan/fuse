@@ -1,0 +1,37 @@
+{
+ "summary": {
+  "B1_on_S_without_A": {
+   "passed": 6,
+   "of": 10,
+   "failed": [
+    "test_gzip_default_exclude_content_types[asyncio-audio/mpeg]",
+    "test_gzip_default_exclude_content_types[asyncio-video/mp4]",
+    "test_gzip_default_exclude_content_types[trio-audio/mpeg]",
+    "test_gzip_default_exclude_content_types[trio-video/mp4]"
+   ]
+  },
+  "B2_on_S_without_A": {
+   "passed": 2,
+   "of": 2,
+   "failed": []
+  }
+ },
+ "outcomes": {
+  "B1_on_S_without_A": {
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-application/zip]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-audio/mpeg]": "failed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-font/woff2]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-image/png]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-video/mp4]": "failed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-application/zip]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-audio/mpeg]": "failed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-font/woff2]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-image/png]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-video/mp4]": "failed"
+  },
+  "B2_on_S_without_A": {
+   "tests/middleware/test_gzip.py::test_gzip_ignored_on_range_responses[asyncio]": "passed",
+   "tests/middleware/test_gzip.py::test_gzip_ignored_on_range_responses[trio]": "passed"
+  }
+ }
+}

@@ -1,0 +1,28 @@
+[
+  {
+    "request": {
+      "files": [
+        {
+          "path": "a",
+          "language": "python",
+          "source": "x+x\n"
+        }
+      ],
+      "pattern": "$v+$v",
+      "pattern_mode": "structural"
+    },
+    "expected_subset": {
+      "matches": [
+        {
+          "path": "a",
+          "start": 0,
+          "end": 3,
+          "text": "x+x",
+          "captures": {
+            "v": "x"
+          }
+        }
+      ]
+    }
+  }
+]

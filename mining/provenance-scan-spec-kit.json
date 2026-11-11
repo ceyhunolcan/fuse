@@ -1,0 +1,1106 @@
+{
+ "repo": "spec-kit",
+ "cutoff": "2026-06-06",
+ "commits": 1328,
+ "triples": [
+  {
+   "A": {
+    "pr": 5064,
+    "title": "fix(workflows): handle undecodable shell output as a step failure (#5064)",
+    "lines": 200
+   },
+   "Bs": [
+    {
+     "pr": 5330,
+     "title": "fix(workflows): reject non-standard JSON in shell output (#5330)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 5209,
+     "title": "fix(workflows): decode code-page shell output in Python's UTF-8 mode (#5209)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4789,
+    "title": "fix(bundles): verify pins of independently installed components (#4789)",
+    "lines": 274
+   },
+   "Bs": [
+    {
+     "pr": 4942,
+     "title": "fix(bundles): allow newer packaged patch releases with warnings (#4942)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4844,
+     "title": "feat(bundles): reconcile exact component pins and version conflicts (#4844)",
+     "lines_of_A_modified": 26
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4697,
+    "title": "fix: sync integration manifest hashes after preset re-registration on upgrade (#4697)",
+    "lines": 253
+   },
+   "Bs": [
+    {
+     "pr": 5198,
+     "title": "feat(integrations): add a preflight_setup() hook that runs before shared writes (#5198)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 5145,
+     "title": "fix(integrations): refresh manifest hashes after preset registration on switch and use (#5145)",
+     "lines_of_A_modified": 7
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4683,
+    "title": "chore: refactor event domain layout (#4683)",
+    "lines": 90
+   },
+   "Bs": [
+    {
+     "pr": 5133,
+     "title": "fix: validate collected extension events (#5133)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4785,
+     "title": "Register extension commands and skills for generic integration (#4785)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4477,
+    "title": "fix: require explicit refresh for bundle manifest changes (#4477)",
+    "lines": 349
+   },
+   "Bs": [
+    {
+     "pr": 5067,
+     "title": "feat(bundles): allow bundles to reference other bundles (#5067)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4844,
+     "title": "feat(bundles): reconcile exact component pins and version conflicts (#4844)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 4663,
+     "title": "refactor: reorganize bundle CLI commands (#4663)",
+     "lines_of_A_modified": 12
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4460,
+    "title": "refactor(workflows): let the evaluator report its own leaves (#4274) (#4460)",
+    "lines": 380
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 100
+    },
+    {
+     "pr": 4923,
+     "title": "fix(workflows): skip the right side of and/or when the left side decides (#4923)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 4416,
+     "title": "fix(workflows): resolve negative list indices in expressions (#4416)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3843,
+    "title": "fix: use chunked read for integration and preset manifest hash (#3843)",
+    "lines": 19
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 4662,
+     "title": "refactor: organize integration CLI commands (#4662)",
+     "lines_of_A_modified": 4
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4205,
+    "title": "[bug-fix] Fix qodercli-skills-migration: migrate QodercliIntegration to SkillsIntegration (#4205)",
+    "lines": 207
+   },
+   "Bs": [
+    {
+     "pr": 4785,
+     "title": "Register extension commands and skills for generic integration (#4785)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4336,
+     "title": "Add DeepSeek Harness (DSH) integration (#4336)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3885,
+    "title": "fix(bundler): resolve built-in step types when checking bundle component references (#3885)",
+    "lines": 92
+   },
+   "Bs": [
+    {
+     "pr": 4844,
+     "title": "feat(bundles): reconcile exact component pins and version conflicts (#4844)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4769,
+     "title": "feat(workflows): install custom step types from local dirs and archives (#4769)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3883,
+    "title": "fix(workflows): strip a resolved condition before the true/false check (#3883)",
+    "lines": 47
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 11
+    },
+    {
+     "pr": 4766,
+     "title": "feat(workflows): add upper, lower, split, length, and to_json expression filters (#4766)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 4013,
+    "title": "fix(bundle): wrap malformed YAML in a local .zip bundle manifest (#4013)",
+    "lines": 56
+   },
+   "Bs": [
+    {
+     "pr": 4663,
+     "title": "refactor: reorganize bundle CLI commands (#4663)",
+     "lines_of_A_modified": 10
+    },
+    {
+     "pr": 3958,
+     "title": "fix: decode the zipped manifest as UTF-8 before parsing (#3958)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3963,
+    "title": "fix(events): preserve a non-UTF-8 config.toml on hook install/teardown (#3963)",
+    "lines": 99
+   },
+   "Bs": [
+    {
+     "pr": 4862,
+     "title": "feat: support catalog-installed external agent adapters (#4862)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 4564,
+     "title": "fix: skip codex config.toml rewrite when there's nothing to merge (#4564)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3452,
+    "title": "[bug-fix] Fix bundle-update-force-mislead: add refresh() to DefaultPrimitiveInstaller (#3452)",
+    "lines": 209
+   },
+   "Bs": [
+    {
+     "pr": 4827,
+     "title": "fix: make bundle step refresh rollback transactional (#4827)",
+     "lines_of_A_modified": 14
+    },
+    {
+     "pr": 4942,
+     "title": "fix(bundles): allow newer packaged patch releases with warnings (#4942)",
+     "lines_of_A_modified": 14
+    },
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 10
+    },
+    {
+     "pr": 4218,
+     "title": "feat: add JSON output to preset and extension lists (#4218)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 4139,
+     "title": "fix(bundler): re-read the step registry when rolling back a failed step refresh (#4139)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3763,
+    "title": "fix: use bounded read for integration catalog HTTP responses (#3763)",
+    "lines": 258
+   },
+   "Bs": [
+    {
+     "pr": 4662,
+     "title": "refactor: organize integration CLI commands (#4662)",
+     "lines_of_A_modified": 8
+    },
+    {
+     "pr": 3812,
+     "title": "fix: bound response read in integration catalog fetch (#3812)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3770,
+    "title": "fix(workflows,extensions): tolerate non-list catalog tags in search/info display (#3770)",
+    "lines": 93
+   },
+   "Bs": [
+    {
+     "pr": 4673,
+     "title": "refactor: organize workflow CLI commands (#4673)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 4641,
+     "title": "Refactor extension CLI command structure (#4641)",
+     "lines_of_A_modified": 6
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3769,
+    "title": "fix(presets): tolerate non-string and non-list catalog fields in preset search/info (#3769)",
+    "lines": 185
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 20
+    },
+    {
+     "pr": 4657,
+     "title": "refactor: organize preset CLI commands (#4657)",
+     "lines_of_A_modified": 10
+    },
+    {
+     "pr": 3826,
+     "title": "fix(presets): escape installed preset metadata in Rich output (#3826)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3731,
+    "title": "fix(workflows): escape remaining untrusted fields in `workflow info` (#3731)",
+    "lines": 150
+   },
+   "Bs": [
+    {
+     "pr": 4673,
+     "title": "refactor: organize workflow CLI commands (#4673)",
+     "lines_of_A_modified": 32
+    },
+    {
+     "pr": 3770,
+     "title": "fix(workflows,extensions): tolerate non-list catalog tags in search/info display (#3770)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3738,
+    "title": "fix: escape Rich markup in catalog list output (#3738)",
+    "lines": 137
+   },
+   "Bs": [
+    {
+     "pr": 4673,
+     "title": "refactor: organize workflow CLI commands (#4673)",
+     "lines_of_A_modified": 6
+    },
+    {
+     "pr": 4662,
+     "title": "refactor: organize integration CLI commands (#4662)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 4657,
+     "title": "refactor: organize preset CLI commands (#4657)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3651,
+    "title": "fix(cli): guard lazy .hostname ValueError in extension/preset add --from (#3651)",
+    "lines": 135
+   },
+   "Bs": [
+    {
+     "pr": 4641,
+     "title": "Refactor extension CLI command structure (#4641)",
+     "lines_of_A_modified": 7
+    },
+    {
+     "pr": 3141,
+     "title": "harden: secure extension and preset archive downloads (#3141)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3577,
+    "title": "fix(extensions,presets): surface clean error on malformed download URL (#3577)",
+    "lines": 173
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 13
+    },
+    {
+     "pr": 4657,
+     "title": "refactor: organize preset CLI commands (#4657)",
+     "lines_of_A_modified": 9
+    },
+    {
+     "pr": 3141,
+     "title": "harden: secure extension and preset archive downloads (#3141)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3469,
+    "title": "feat(workflows): expose workflow source directory to steps (#3469)",
+    "lines": 323
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 4764,
+     "title": "feat(workflows): compose workflows with a unified execution tree (#4764)",
+     "lines_of_A_modified": 5
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3484,
+    "title": "fix(workflows): raise catalog error, not raw ValueError, on a malformed catalog URL (#3484)",
+    "lines": 216
+   },
+   "Bs": [
+    {
+     "pr": 5350,
+     "title": "Harden initial URL validation in HTTP helpers (#5350)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 5355,
+     "title": "Require HTTPS consistently for catalog sources (#5355)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 3141,
+     "title": "harden: secure extension and preset archive downloads (#3141)",
+     "lines_of_A_modified": 4
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3375,
+    "title": "fix(workflows): harden catalog.py against mis-shaped registry & non-string fields (#3375)",
+    "lines": 65
+   },
+   "Bs": [
+    {
+     "pr": 5115,
+     "title": "feat(workflows): expose installed workflow listing through MCP (#5115)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3419,
+     "title": "feat(workflows): align workflow CLI with extension command surface (#3419)",
+     "lines_of_A_modified": 9
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3344,
+    "title": "fix(bundle): reject file:// / local download_url \u2014 catalog URLs are HTTPS-only (#3344)",
+    "lines": 155
+   },
+   "Bs": [
+    {
+     "pr": 4663,
+     "title": "refactor: reorganize bundle CLI commands (#4663)",
+     "lines_of_A_modified": 36
+    },
+    {
+     "pr": 3141,
+     "title": "harden: secure extension and preset archive downloads (#3141)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3339,
+    "title": "fix(workflows): apply chained expression filters left-to-right (#3339)",
+    "lines": 215
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 77
+    },
+    {
+     "pr": 4766,
+     "title": "feat(workflows): add upper, lower, split, length, and to_json expression filters (#4766)",
+     "lines_of_A_modified": 10
+    },
+    {
+     "pr": 4460,
+     "title": "refactor(workflows): let the evaluator report its own leaves (#4274) (#4460)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3894,
+     "title": "fix(workflows): refuse a filter mixed with a comparison operator instead of silently mis-binding it (#3894)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3689,
+     "title": "fix(workflows): filter parser rejects trailing tokens (fullmatch, not match) (#3689)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3377,
+    "title": "fix(bundler): enforce version pin on bundled preset/extension installs (#3377)",
+    "lines": 139
+   },
+   "Bs": [
+    {
+     "pr": 4942,
+     "title": "fix(bundles): allow newer packaged patch releases with warnings (#4942)",
+     "lines_of_A_modified": 12
+    },
+    {
+     "pr": 4844,
+     "title": "feat(bundles): reconcile exact component pins and version conflicts (#4844)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3369,
+    "title": "fix(cli): exit cleanly on malformed IPv6 URLs in `extension`/`preset`/`workflow add` (#3369)",
+    "lines": 109
+   },
+   "Bs": [
+    {
+     "pr": 4673,
+     "title": "refactor: organize workflow CLI commands (#4673)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 4657,
+     "title": "refactor: organize preset CLI commands (#4657)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 4504,
+     "title": "feat(bundles): first-party bugfix and assess bundles with bundled workflows (#4504)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4641,
+     "title": "Refactor extension CLI command structure (#4641)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 3577,
+     "title": "fix(extensions,presets): surface clean error on malformed download URL (#3577)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 3419,
+     "title": "feat(workflows): align workflow CLI with extension command surface (#3419)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3379,
+    "title": "fix(github-http): return None on malformed GHES port instead of raising (#3379)",
+    "lines": 26
+   },
+   "Bs": [
+    {
+     "pr": 4807,
+     "title": "fix(authentication): support GHE.com release asset downloads (#4807)",
+     "lines_of_A_modified": 7
+    },
+    {
+     "pr": 4438,
+     "title": "fix(github-http): validate release asset metadata URLs (#4438)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3352,
+    "title": "fix(workflows): route run/resume errors to stderr under --json (#3352)",
+    "lines": 126
+   },
+   "Bs": [
+    {
+     "pr": 4673,
+     "title": "refactor: organize workflow CLI commands (#4673)",
+     "lines_of_A_modified": 8
+    },
+    {
+     "pr": 3419,
+     "title": "feat(workflows): align workflow CLI with extension command surface (#3419)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3367,
+    "title": "fix(bundler): validate catalog URLs in `catalog add` (HTTPS-only, require host) (#3367)",
+    "lines": 61
+   },
+   "Bs": [
+    {
+     "pr": 5355,
+     "title": "Require HTTPS consistently for catalog sources (#5355)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 3644,
+     "title": "fix(bundler): guard lazy .hostname ValueError in catalog add_source (#3644)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3307,
+    "title": "fix(workflows): quote-aware interpolation so a literal }} in a filter arg doesn't break multi-expression templates (#3307)",
+    "lines": 124
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 50
+    },
+    {
+     "pr": 4182,
+     "title": "fix(workflows): reject a condition that has no {{ }} block (#4182)",
+     "lines_of_A_modified": 14
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3285,
+    "title": "feat(cli): add `py` script type & Python interpreter resolution (#3278) (#3285)",
+    "lines": 273
+   },
+   "Bs": [
+    {
+     "pr": 3386,
+     "title": "feat(scripts): port create-new-feature, setup-plan and setup-tasks to Python (#3386)",
+     "lines_of_A_modified": 8
+    },
+    {
+     "pr": 3385,
+     "title": "fix(integrations): skip Windows Store python3 alias stub in resolve_python_interpreter (#3385)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3256,
+    "title": "feat(copilot): warn before skills default rollout (#3256)",
+    "lines": 85
+   },
+   "Bs": [
+    {
+     "pr": 3976,
+     "title": "feat(copilot): default integration to skills (#3976)",
+     "lines_of_A_modified": 9
+    },
+    {
+     "pr": 3704,
+     "title": "feat: first-class agent-native runtime hooks for integrations (#3704)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3235,
+    "title": "fix(bundle): send command errors to stderr so --json stdout stays parseable (#3235)",
+    "lines": 25
+   },
+   "Bs": [
+    {
+     "pr": 4663,
+     "title": "refactor: reorganize bundle CLI commands (#4663)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 3764,
+     "title": "fix: use bounded read for bundle download HTTP responses (#3764)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 4023,
+     "title": "fix(bundle): escape Rich markup in bundle CLI error and status output (#4023)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3232,
+    "title": "fix(workflows): make pipe-filter detection quote-aware in expressions (#3232)",
+    "lines": 33
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 3339,
+     "title": "fix(workflows): apply chained expression filters left-to-right (#3339)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3217,
+    "title": "fix(extensions): apply GHES auth and resolve release assets for `extension add --from` (#3217)",
+    "lines": 132
+   },
+   "Bs": [
+    {
+     "pr": 3914,
+     "title": "Add `--extension` flag to `specify init` for opting into extensions at init time (#3914)",
+     "lines_of_A_modified": 17
+    },
+    {
+     "pr": 3874,
+     "title": "feat: support tar archives for installs (#3874)",
+     "lines_of_A_modified": 10
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3210,
+    "title": "fix(catalogs): reject host-less catalog URLs in base and preset validators (#3210)",
+    "lines": 46
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 3576,
+     "title": "fix(presets): raise PresetValidationError, not raw ValueError, on malformed catalog URL (#3576)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3435,
+     "title": "fix(catalogs): raise catalog error, not raw ValueError, on a malformed URL (#3435)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3227,
+     "title": "fix: reject host-less catalog URLs in base and preset validators (#3209) (#3227)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3080,
+    "title": "feat(extensions): verify catalog archive sha256 before install (#3080)",
+    "lines": 351
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 3874,
+     "title": "feat: support tar archives for installs (#3874)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 3276,
+     "title": "fix(presets): seed constitution from preset constitution-template (#3272) (#3276)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3107,
+    "title": "feat(integrations): add omp support (#3107)",
+    "lines": 106
+   },
+   "Bs": [
+    {
+     "pr": 4876,
+     "title": "feat(omp): support integration args and options in build_exec_args (#4876)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 3097,
+     "title": "feat: make agent-context extension a full opt-in (#3097)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2988,
+    "title": "fix: write Codex dev skills as files (#2988)",
+    "lines": 260
+   },
+   "Bs": [
+    {
+     "pr": 4862,
+     "title": "feat: support catalog-installed external agent adapters (#4862)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 3853,
+     "title": "[bug-fix] Fix upgrade-overwrites-copilot-skills: pass force=True to extension skill re-registration after upgrade (#3853)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3098,
+    "title": "fix(shared-infra): remove stale managed scripts the core no longer ships (#3076) (#3098)",
+    "lines": 329
+   },
+   "Bs": [
+    {
+     "pr": 3386,
+     "title": "feat(scripts): port create-new-feature, setup-plan and setup-tasks to Python (#3386)",
+     "lines_of_A_modified": 13
+    },
+    {
+     "pr": 3403,
+     "title": "feat(templates): add py: lines to command templates' scripts frontmatter (#3403)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3063,
+    "title": "feat: add ZCode (Z.AI) integration (#3063)",
+    "lines": 147
+   },
+   "Bs": [
+    {
+     "pr": 4910,
+     "title": "fix(integrations): show hyphenated command names for docker-agent and junie (#4910)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 4019,
+     "title": "Add Command Code integration to spec-kit (#4019)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3097,
+     "title": "feat: make agent-context extension a full opt-in (#3097)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3074,
+    "title": "fix: fail loudly on an unknown workflow expression filter (#3074)",
+    "lines": 102
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 13
+    },
+    {
+     "pr": 3339,
+     "title": "fix(workflows): apply chained expression filters left-to-right (#3339)",
+     "lines_of_A_modified": 21
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2978,
+    "title": "fix(presets): preserve argument-hint in preset SKILL.md generation (#2978)",
+    "lines": 131
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 3459,
+     "title": "fix: register extensions for the active integration only (#3459)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2965,
+    "title": "feat: surface gate detail in the workflow run/resume --json payload (#2965)",
+    "lines": 313
+   },
+   "Bs": [
+    {
+     "pr": 4764,
+     "title": "feat(workflows): compose workflows with a unified execution tree (#4764)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3159,
+     "title": "refactor: move workflow command handlers to workflows/_commands.py (PR-8/8) (#3159)",
+     "lines_of_A_modified": 73
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2511,
+    "title": "feat(claude): run /analyze in a forked subagent (#2511)",
+    "lines": 184
+   },
+   "Bs": [
+    {
+     "pr": 4919,
+     "title": "feat(claude): add --no-model-invocation integration option (#4919)",
+     "lines_of_A_modified": 9
+    },
+    {
+     "pr": 3188,
+     "title": "fix(claude): stop forking /speckit-analyze to prevent long-session freezes (#3188)",
+     "lines_of_A_modified": 7
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 3020,
+    "title": "fix: preserve .vscode/settings.json and script +x bit on integration upgrade (#3020)",
+    "lines": 87
+   },
+   "Bs": [
+    {
+     "pr": 4662,
+     "title": "refactor: organize integration CLI commands (#4662)",
+     "lines_of_A_modified": 10
+    },
+    {
+     "pr": 3704,
+     "title": "feat: first-class agent-native runtime hooks for integrations (#3704)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 3415,
+     "title": "feat: update Bob integration to skills-based layout for Bob 2.0 (#3415)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2961,
+    "title": "feat(workflows): add from_json expression filter (#2961)",
+    "lines": 97
+   },
+   "Bs": [
+    {
+     "pr": 5114,
+     "title": "refactor(workflows): split the expression evaluator into a package (#5114)",
+     "lines_of_A_modified": 20
+    },
+    {
+     "pr": 4766,
+     "title": "feat(workflows): add upper, lower, split, length, and to_json expression filters (#4766)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3339,
+     "title": "fix(workflows): apply chained expression filters left-to-right (#3339)",
+     "lines_of_A_modified": 16
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2963,
+    "title": "feat(workflows): opt-in output_format: json exposes parsed shell stdout as output.data (#2963)",
+    "lines": 91
+   },
+   "Bs": [
+    {
+     "pr": 5330,
+     "title": "fix(workflows): reject non-standard JSON in shell output (#5330)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 5064,
+     "title": "fix(workflows): handle undecodable shell output as a step failure (#5064)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2917,
+    "title": "fix(skills): preserve non-ASCII characters in skill frontmatter (#2917)",
+    "lines": 106
+   },
+   "Bs": [
+    {
+     "pr": 4747,
+     "title": "refactor(presets): split domain internals into private modules (#4747)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 3459,
+     "title": "fix: register extensions for the active integration only (#3459)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 2695,
+     "title": "fix: allow prerelease spec-kit versions in compatibility checks (#2695)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 3088,
+     "title": "Harden command registration path handling (#3088)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2911,
+    "title": "fix(presets): harden preset URL installs against unsafe redirects (#2911)",
+    "lines": 268
+   },
+   "Bs": [
+    {
+     "pr": 3140,
+     "title": "harden: bound HTTP reads and enforce strict redirects (#3140)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 3369,
+     "title": "fix(cli): exit cleanly on malformed IPv6 URLs in `extension`/`preset`/`workflow add` (#3369)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 2826,
+     "title": "refactor: move preset command handlers to presets/_commands.py (PR-6/8) (#2826)",
+     "lines_of_A_modified": 52
+    }
+   ]
+  }
+ ]
+}

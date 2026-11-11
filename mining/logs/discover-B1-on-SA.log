@@ -1,0 +1,264 @@
+..........FFFFF..................FFFFF........                           [100%]
+=================================== FAILURES ===================================
+_______ test_gzip_default_exclude_content_types[asyncio-application/zip] _______
+
+content_type = b'application/zip'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'application/zip', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'application/zip', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+_________ test_gzip_default_exclude_content_types[asyncio-audio/mpeg] __________
+
+content_type = b'audio/mpeg'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'audio/mpeg', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'audio/mpeg', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+_________ test_gzip_default_exclude_content_types[asyncio-font/woff2] __________
+
+content_type = b'font/woff2'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'font/woff2', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'font/woff2', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+__________ test_gzip_default_exclude_content_types[asyncio-image/png] __________
+
+content_type = b'image/png'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'image/png', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'image/png', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+__________ test_gzip_default_exclude_content_types[asyncio-video/mp4] __________
+
+content_type = b'video/mp4'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='asyncio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'video/mp4', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'video/mp4', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+________ test_gzip_default_exclude_content_types[trio-application/zip] _________
+
+content_type = b'application/zip'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'application/zip', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'application/zip', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+___________ test_gzip_default_exclude_content_types[trio-audio/mpeg] ___________
+
+content_type = b'audio/mpeg'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'audio/mpeg', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'audio/mpeg', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+___________ test_gzip_default_exclude_content_types[trio-font/woff2] ___________
+
+content_type = b'font/woff2'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'font/woff2', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'font/woff2', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+___________ test_gzip_default_exclude_content_types[trio-image/png] ____________
+
+content_type = b'image/png'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'image/png', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'image/png', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+___________ test_gzip_default_exclude_content_types[trio-video/mp4] ____________
+
+content_type = b'video/mp4'
+test_client_factory = functools.partial(<class 'starlette.testclient.TestClient'>, backend='trio', backend_options={})
+
+    @pytest.mark.parametrize(
+        "content_type",
+        [b"application/zip", b"audio/mpeg", b"font/woff2", b"image/png", b"video/mp4"],
+    )
+    def test_gzip_default_exclude_content_types(content_type: bytes, test_client_factory: TestClientFactory) -> None:
+        async def app(scope: Scope, receive: Receive, send: Send) -> None:
+            await send({"type": "http.response.start", "status": 200, "headers": [(b"content-type", content_type)]})
+            await send({"type": "http.response.body", "body": b"x" * 4000})
+    
+        middleware = GZipMiddleware(app)
+    
+        client = test_client_factory(middleware)
+        response = client.get("/", headers={"accept-encoding": "gzip"})
+        assert response.status_code == 200
+        assert response.content == b"x" * 4000
+>       assert "Content-Encoding" not in response.headers
+E       AssertionError: assert 'Content-Encoding' not in Headers({'content-type': 'video/mp4', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'})
+E        +  where Headers({'content-type': 'video/mp4', 'vary': 'Accept-Encoding', 'content-encoding': 'gzip', 'content-length': '39'}) = <Response [200 OK]>.headers
+
+tests/middleware/test_gzip.py:259: AssertionError
+=========================== short test summary info ============================
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-application/zip]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-audio/mpeg]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-font/woff2]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-image/png]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[asyncio-video/mp4]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-application/zip]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-audio/mpeg]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-font/woff2]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-image/png]
+FAILED tests/middleware/test_gzip.py::test_gzip_default_exclude_content_types[trio-video/mp4]
+10 failed, 36 passed in 0.48s

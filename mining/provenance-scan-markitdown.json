@@ -1,0 +1,107 @@
+{
+ "repo": "markitdown",
+ "cutoff": "2026-06-06",
+ "commits": 118,
+ "triples": [
+  {
+   "A": {
+    "pr": 2059,
+    "title": "fix: PptxConverter tolerates None shape.text and notes text (#2059)",
+    "lines": 73
+   },
+   "Bs": [
+    {
+     "pr": 2442,
+     "title": "fix(pptx): do not emit a heading for a slide with an empty title (#2442)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 2427,
+     "title": "fix(pptx): do not emit a Notes heading for a slide with no notes (#2427)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2017,
+    "title": "fix(docx): preserve underlined text (#2017)",
+    "lines": 223
+   },
+   "Bs": [
+    {
+     "pr": 2506,
+     "title": "Refactor Office OCR converters to reuse core conversion pipelines (#2506)",
+     "lines_of_A_modified": 33
+    },
+    {
+     "pr": 2016,
+     "title": "fix: handle DOCX files with inconsistent ZIP filename casing (#1812) (#2016)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2297,
+    "title": "fix(rss): preserve Atom XHTML content (#2297)",
+    "lines": 112
+   },
+   "Bs": [
+    {
+     "pr": 2432,
+     "title": "fix(rss): preserve complete feed content and resolve relative link (#2432)",
+     "lines_of_A_modified": 19
+    },
+    {
+     "pr": 2429,
+     "title": "fix(rss): support namespace-prefixed Atom feeds (#2429)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 2374,
+     "title": "fix(rss): treat Atom text content and summary as plain text (#2374)",
+     "lines_of_A_modified": 11
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2333,
+    "title": "fix: fall back to plain text when RSS item content triggers RecursionError (#2333)",
+    "lines": 136
+   },
+   "Bs": [
+    {
+     "pr": 2432,
+     "title": "fix(rss): preserve complete feed content and resolve relative link (#2432)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 2374,
+     "title": "fix(rss): treat Atom text content and summary as plain text (#2374)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 2360,
+    "title": "Mitigate UnicodeDecodeError due to wrong ASCII charset guess for long files (#2360)",
+    "lines": 31
+   },
+   "Bs": [
+    {
+     "pr": 2466,
+     "title": "fix: avoid splitting UTF-8 characters during charset detection (#2466)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 1929,
+     "title": "fix: IpynbConverter.accepts() catches UnicodeDecodeError on non-decodable content (fixes #1894) (#1929)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  }
+ ]
+}

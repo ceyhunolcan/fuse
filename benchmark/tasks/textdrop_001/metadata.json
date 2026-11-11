@@ -1,0 +1,45 @@
+{
+  "task_id": "textdrop_001",
+  "version": "authored-cpu-draft-v1",
+  "origin": "newly_authored_for_FUSE",
+  "task_class": "unvalidated",
+  "expert_status": "pending",
+  "language": "python",
+  "module": "fusetextdrop",
+  "starter": "Working plain-text create/get/list/delete JSON note store.",
+  "A": "Persistent note snapshots and safe Markdown rendering",
+  "B1": "Later add account registration, login sessions, note ownership and account/session lifecycle operations.",
+  "B2": "Later make storage selectable between snapshot and append-only journal backends, preserving note behavior across reloads.",
+  "agent_visibility": "base_repo plus rendered prompt only",
+  "test_status": "authored; validate before freeze",
+  "dependencies": "Python standard library only; sandbox runtime compatibility pending",
+  "starter_probe": {
+    "request": {
+      "command": {
+        "op": "create",
+        "title": "Plain",
+        "body": "hello"
+      }
+    },
+    "expected": {
+      "state": {
+        "version": 1,
+        "next_id": 2,
+        "notes": {
+          "1": {
+            "id": 1,
+            "title": "Plain",
+            "body": "hello",
+            "format": "plain"
+          }
+        }
+      },
+      "result": {
+        "id": 1,
+        "title": "Plain",
+        "body": "hello",
+        "format": "plain"
+      }
+    }
+  }
+}

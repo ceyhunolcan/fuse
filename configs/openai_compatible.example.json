@@ -1,0 +1,18 @@
+{
+  "status": "development_unfrozen",
+  "model": "REPLACE-with-model-name",
+  "model_revision": "REPLACE-with-provider-version-or-date",
+  "endpoint_url": "https://api.openai.com/v1",
+  "api_key_env": "FUSE_API_KEY",
+  "temperature": 0.0,
+  "seed_supported": false,
+  "max_turns": 30,
+  "time_limit_seconds": 900,
+  "context_budget_tokens": 32768,
+  "max_generated_tokens": 32768,
+  "max_output_tokens_per_turn": 8192,
+  "sandbox_backend": "docker",
+  "container_image": "sha256:REPLACE-with-local-image-id",
+  "container_user": "1000:1000",
+  "network": "none"
+}

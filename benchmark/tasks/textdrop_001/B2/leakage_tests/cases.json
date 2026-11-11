@@ -1,0 +1,17 @@
+[
+  {
+    "request": {
+      "backend": "journal",
+      "command": {
+        "op": "create",
+        "title": "x",
+        "body": "y"
+      }
+    },
+    "expected_subset": {
+      "state": {
+        "backend": "journal"
+      }
+    }
+  }
+]

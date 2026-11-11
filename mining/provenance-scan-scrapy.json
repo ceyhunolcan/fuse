@@ -1,0 +1,1037 @@
+{
+ "repo": "scrapy",
+ "cutoff": "2026-06-06",
+ "commits": 621,
+ "triples": [
+  {
+   "A": {
+    "pr": 8343,
+    "title": "Bracket IPv6 destinations in HTTP proxy CONNECT requests (#8343)",
+    "lines": 35
+   },
+   "Bs": [
+    {
+     "pr": 7776,
+     "title": "Support HTTPS proxies with Twisted (#7776)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 7888,
+     "title": "Support sending proxy headers (#7888)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8313,
+    "title": "Minimize to_bytes()/to_unicode() usage. (#8313)",
+    "lines": 347
+   },
+   "Bs": [
+    {
+     "pr": 8393,
+     "title": "Frostwork integration (#8393)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 7776,
+     "title": "Support HTTPS proxies with Twisted (#7776)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7888,
+     "title": "Support sending proxy headers (#7888)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8316,
+     "title": "Cleanup decode_robotstxt(). (#8316)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8247,
+    "title": "Cache URL parses per URL and parse fewer URLs per request (#8247)",
+    "lines": 248
+   },
+   "Bs": [
+    {
+     "pr": 8474,
+     "title": "Remove remnants of w3lib < 2.6 support. (#8474)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8331,
+     "title": "Add Response.follow_redirect() (#8331)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8329,
+     "title": "Only send http_user/http_pass to the origin they were first used on (#8329)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8288,
+    "title": "Deprecate sync Scraper.handle_spider_output_async() input. (#8288)",
+    "lines": 139
+   },
+   "Bs": [
+    {
+     "pr": 8414,
+     "title": "Deprecate parallel_async(). (#8414)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8363,
+     "title": "Remove wrapping callbck exceptions into Failures. (#8363)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8350,
+     "title": "Make aiter_errback() private. (#8350)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7992,
+    "title": "Run errback output through the spider middlewares on download errors (#7992)",
+    "lines": 156
+   },
+   "Bs": [
+    {
+     "pr": 8207,
+     "title": "Allow awaiting a Request to download it inline (#8207)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 8288,
+     "title": "Deprecate sync Scraper.handle_spider_output_async() input. (#8288)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7810,
+    "title": "Close proxy connections after timeout (#7810)",
+    "lines": 192
+   },
+   "Bs": [
+    {
+     "pr": 7776,
+     "title": "Support HTTPS proxies with Twisted (#7776)",
+     "lines_of_A_modified": 19
+    },
+    {
+     "pr": 8116,
+     "title": "Ipv6 proxy support (#8116)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8263,
+    "title": "Simplifications after dropping Python 3.10, bump tools (#8263)",
+    "lines": 136
+   },
+   "Bs": [
+    {
+     "pr": 7951,
+     "title": "Make the media pipeline checksum algorithm configurable (#7951)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 7925,
+     "title": "Make media pipeline storages configurable components (#7925)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8189,
+    "title": "Deprecate scrapy.utils.url.add_http_if_no_scheme() in favor of w3lib (#8189)",
+    "lines": 55
+   },
+   "Bs": [
+    {
+     "pr": 8474,
+     "title": "Remove remnants of w3lib < 2.6 support. (#8474)",
+     "lines_of_A_modified": 15
+    },
+    {
+     "pr": 8247,
+     "title": "Cache URL parses per URL and parse fewer URLs per request (#8247)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7959,
+    "title": "Start item-processing workers on demand instead of one per CONCURRENT_ITEMS (#7959)",
+    "lines": 168
+   },
+   "Bs": [
+    {
+     "pr": 8414,
+     "title": "Deprecate parallel_async(). (#8414)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8318,
+     "title": "Handle exceptions and cancellation in parallel helpers. (#8318)",
+     "lines_of_A_modified": 9
+    },
+    {
+     "pr": 8288,
+     "title": "Deprecate sync Scraper.handle_spider_output_async() input. (#8288)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7911,
+    "title": "Add an item_processor feed option (#7911)",
+    "lines": 203
+   },
+   "Bs": [
+    {
+     "pr": 8330,
+     "title": "Use aioboto3 for S3 feed storage when available (#8330)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7826,
+     "title": "Support feed modes (#7826)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 7800,
+     "title": "Allow item exporter and feed storage methods to be coroutines (#7800)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8261,
+     "title": "Drop Python 3.10 support. (#8261)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8162,
+    "title": "Add an UPLOAD_TIMEOUT setting (#8162)",
+    "lines": 220
+   },
+   "Bs": [
+    {
+     "pr": 8330,
+     "title": "Use aioboto3 for S3 feed storage when available (#8330)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8339,
+     "title": "Use aiobotocore in S3FilesStore when available (#8339)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7925,
+     "title": "Make media pipeline storages configurable components (#7925)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 7826,
+     "title": "Support feed modes (#7826)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8152,
+    "title": "Add JOBDIR_SYNC_EVERY to keep active.json current, written atomically (#8152)",
+    "lines": 275
+   },
+   "Bs": [
+    {
+     "pr": 7837,
+     "title": "Align peek and pop (#7837)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8237,
+     "title": "Honor request priority across the scheduler memory and disk queues (#8237)",
+     "lines_of_A_modified": 11
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8196,
+    "title": "Fix file store modification timestamps (#8196)",
+    "lines": 60
+   },
+   "Bs": [
+    {
+     "pr": 7951,
+     "title": "Make the media pipeline checksum algorithm configurable (#7951)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8262,
+     "title": "Bump the minimum Python version for Ruff. (#8262)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8204,
+    "title": "Support propagating a spider-triggered error as an exit code (#8204)",
+    "lines": 121
+   },
+   "Bs": [
+    {
+     "pr": 8207,
+     "title": "Allow awaiting a Request to download it inline (#8207)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8272,
+     "title": "Further engine refactoring  (#8272)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 8217,
+     "title": "Make closing the spider stop the engine, other state transition fixes (#8217)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8200,
+    "title": "CrawlSpider: extract links even when a rule's callback raises (#8200)",
+    "lines": 61
+   },
+   "Bs": [
+    {
+     "pr": 8392,
+     "title": "Support async parse_node(), parse_row() and Rule errbacks. (#8392)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 8207,
+     "title": "Allow awaiting a Request to download it inline (#8207)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8195,
+    "title": "Avoid decoding response bodies for html/xml selectors when possible (#8195)",
+    "lines": 58
+   },
+   "Bs": [
+    {
+     "pr": 8393,
+     "title": "Frostwork integration (#8393)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 8222,
+     "title": "Build selectors from bytes only with parsel 1.12.0+, fixing UTF-16 (#8222)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8192,
+    "title": "Never fail decoding headers in to_unicode_dict() and to_tuple_list() (#8192)",
+    "lines": 29
+   },
+   "Bs": [
+    {
+     "pr": 8313,
+     "title": "Minimize to_bytes()/to_unicode() usage. (#8313)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8264,
+     "title": "Deprecate more Headers methods. (#8264)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8182,
+    "title": "Bump Ruff to 0.16. (#8182)",
+    "lines": 300
+   },
+   "Bs": [
+    {
+     "pr": 8207,
+     "title": "Allow awaiting a Request to download it inline (#8207)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8069,
+     "title": "SitemapSpider: avoid duplicate robots.txt requests (#8069)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8183,
+    "title": "Typing improvements (#8183)",
+    "lines": 301
+   },
+   "Bs": [
+    {
+     "pr": 7776,
+     "title": "Support HTTPS proxies with Twisted (#7776)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8171,
+     "title": "Derive S3 media pipeline header mapping from botocore (#8171)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8270,
+     "title": "Deprecate scrapy.utils.datatypes. (#8270)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 8267,
+     "title": "Handle repeated, None and non-UTF-8 headers in curl integration. (#8267)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8262,
+     "title": "Bump the minimum Python version for Ruff. (#8262)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8181,
+    "title": "Make ExecutionEngine a state machine. (#8181)",
+    "lines": 340
+   },
+   "Bs": [
+    {
+     "pr": 8479,
+     "title": "Support coros in schedulers and dupefilters. (#8479)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 8272,
+     "title": "Further engine refactoring  (#8272)",
+     "lines_of_A_modified": 5
+    },
+    {
+     "pr": 8217,
+     "title": "Make closing the spider stop the engine, other state transition fixes (#8217)",
+     "lines_of_A_modified": 54
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8173,
+    "title": "Support appending to GCS feeds via composite objects (#8173)",
+    "lines": 196
+   },
+   "Bs": [
+    {
+     "pr": 7826,
+     "title": "Support feed modes (#7826)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8162,
+     "title": "Add an UPLOAD_TIMEOUT setting (#8162)",
+     "lines_of_A_modified": 6
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8123,
+    "title": "Implement some idioms from newer Python versions. (#8123)",
+    "lines": 105
+   },
+   "Bs": [
+    {
+     "pr": 8440,
+     "title": "Improve Twisted-related type hints. (#8440)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 7932,
+     "title": "Add CONCURRENT_CONNECTIONS_PER_HANDLER and CONNECTION_KEEPALIVE_TIMEOUT (#7932)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8342,
+     "title": "Add a CONNECTION_KEEPALIVE_TIMEOUT setting (#8342)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8262,
+     "title": "Bump the minimum Python version for Ruff. (#8262)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8135,
+     "title": "Deprecate some of scrapy.utils (#8135)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8081,
+    "title": "Include bind address in HTTP/1.1 and HTTP/2 pool keys (#8081)",
+    "lines": 71
+   },
+   "Bs": [
+    {
+     "pr": 8440,
+     "title": "Improve Twisted-related type hints. (#8440)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8116,
+     "title": "Ipv6 proxy support (#8116)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8123,
+     "title": "Implement some idioms from newer Python versions. (#8123)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8091,
+    "title": "Add optional colored logging via LOG_COLOR and the color extra (#8091)",
+    "lines": 133
+   },
+   "Bs": [
+    {
+     "pr": 8336,
+     "title": "Add LOG_ROOT_FORMATTER to customize the root log handler formatter (#8336)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 8146,
+     "title": "Deprecate remaining planned scrapy.utils (#8146)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 8023,
+    "title": "Remove deprecated CaselessDict and md5sum() (#8023)",
+    "lines": 201
+   },
+   "Bs": [
+    {
+     "pr": 8270,
+     "title": "Deprecate scrapy.utils.datatypes. (#8270)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8268,
+     "title": "Return the default from Headers.get() for headers set to None. (#8268)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 8264,
+     "title": "Deprecate more Headers methods. (#8264)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7990,
+    "title": "Complete coverage for H2DownloadHandler (#7990)",
+    "lines": 364
+   },
+   "Bs": [
+    {
+     "pr": 7932,
+     "title": "Add CONCURRENT_CONNECTIONS_PER_HANDLER and CONNECTION_KEEPALIVE_TIMEOUT (#7932)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8123,
+     "title": "Implement some idioms from newer Python versions. (#8123)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7806,
+    "title": "Implement browser-like bad header handling for the default download handler (#7806)",
+    "lines": 197
+   },
+   "Bs": [
+    {
+     "pr": 7776,
+     "title": "Support HTTPS proxies with Twisted (#7776)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7932,
+     "title": "Add CONCURRENT_CONNECTIONS_PER_HANDLER and CONNECTION_KEEPALIVE_TIMEOUT (#7932)",
+     "lines_of_A_modified": 73
+    },
+    {
+     "pr": 8123,
+     "title": "Implement some idioms from newer Python versions. (#8123)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7905,
+    "title": "Support CloseSpider during spider startup (#7905)",
+    "lines": 124
+   },
+   "Bs": [
+    {
+     "pr": 8272,
+     "title": "Further engine refactoring  (#8272)",
+     "lines_of_A_modified": 9
+    },
+    {
+     "pr": 8217,
+     "title": "Make closing the spider stop the engine, other state transition fixes (#8217)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8204,
+     "title": "Support propagating a spider-triggered error as an exit code (#8204)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 8177,
+     "title": "Let process_response() exceptions reach process_exception() (#8177)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8181,
+     "title": "Make ExecutionEngine a state machine. (#8181)",
+     "lines_of_A_modified": 20
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7882,
+    "title": "Type late Crawler attributes as always set instead of None (#7882)",
+    "lines": 231
+   },
+   "Bs": [
+    {
+     "pr": 8363,
+     "title": "Remove wrapping callbck exceptions into Failures. (#8363)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8181,
+     "title": "Make ExecutionEngine a state machine. (#8181)",
+     "lines_of_A_modified": 5
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7884,
+    "title": "Report exceptions from Spider.start() (#7884)",
+    "lines": 164
+   },
+   "Bs": [
+    {
+     "pr": 8207,
+     "title": "Allow awaiting a Request to download it inline (#8207)",
+     "lines_of_A_modified": 15
+    },
+    {
+     "pr": 8204,
+     "title": "Support propagating a spider-triggered error as an exit code (#8204)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 7905,
+     "title": "Support CloseSpider during spider startup (#7905)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 7882,
+     "title": "Type late Crawler attributes as always set instead of None (#7882)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7929,
+    "title": "Make brotli a hard dependency (#7929)",
+    "lines": 120
+   },
+   "Bs": [
+    {
+     "pr": 8367,
+     "title": "Remove remaining PyPy support. (#8367)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 8358,
+     "title": "Drop PyPy support from docs and tests. (#8358)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8009,
+     "title": "Use compression.zstd/backports.zstd and make zstd support mandatory (#8009)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7896,
+    "title": "Send the bytes_received and headers_received signals over HTTP/2 (#7896)",
+    "lines": 123
+   },
+   "Bs": [
+    {
+     "pr": 8464,
+     "title": "Return partial HTTP/2 responses on timeout when fail_on_dataloss is False (#8464)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 7989,
+     "title": "Handle data loss in HTTP/2 responses (#7989)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7990,
+     "title": "Complete coverage for H2DownloadHandler (#7990)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7840,
+    "title": "Support CONCURRENT_REQUESTS = 0 for unlimited concurrency (#7840)",
+    "lines": 44
+   },
+   "Bs": [
+    {
+     "pr": 6430,
+     "title": "Pause request processing based on the sum of body sizes of all active responses (#6430)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7932,
+     "title": "Add CONCURRENT_CONNECTIONS_PER_HANDLER and CONNECTION_KEEPALIVE_TIMEOUT (#7932)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8342,
+     "title": "Add a CONNECTION_KEEPALIVE_TIMEOUT setting (#8342)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7843,
+    "title": "Add scrapy.utils.asyncio.sleep() (#7843)",
+    "lines": 69
+   },
+   "Bs": [
+    {
+     "pr": 8454,
+     "title": "Deprecate non-asyncio reactors (#8454)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8325,
+     "title": "Use the asyncio reactor's loop when no loop is running. (#8325)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8019,
+     "title": "Stop sleeping 100 ms before every callback and media result (#8019)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7794,
+    "title": "Add AWS_MAX_POOL_CONNECTIONS (#7794)",
+    "lines": 131
+   },
+   "Bs": [
+    {
+     "pr": 8330,
+     "title": "Use aioboto3 for S3 feed storage when available (#8330)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8339,
+     "title": "Use aiobotocore in S3FilesStore when available (#8339)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7925,
+     "title": "Make media pipeline storages configurable components (#7925)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 8162,
+     "title": "Add an UPLOAD_TIMEOUT setting (#8162)",
+     "lines_of_A_modified": 11
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7733,
+    "title": "Fix immediate delivery of full feed export batches (#7730) (#7733)",
+    "lines": 80
+   },
+   "Bs": [
+    {
+     "pr": 7911,
+     "title": "Add an item_processor feed option (#7911)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 7809,
+     "title": "Improve test coverage for scrapy.extensions (#7809)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7673,
+    "title": "Address recursion and media ignore-request reporting issues (#7673)",
+    "lines": 207
+   },
+   "Bs": [
+    {
+     "pr": 8417,
+     "title": "Limit memory used by media pipeline and other download_async() requests (#8417)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7973,
+     "title": "Deprecate the old import path of FileException (#7973)",
+     "lines_of_A_modified": 3
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7684,
+    "title": "Cleanup cookie handling in request_to_curl() (#7684)",
+    "lines": 232
+   },
+   "Bs": [
+    {
+     "pr": 8313,
+     "title": "Minimize to_bytes()/to_unicode() usage. (#8313)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7858,
+     "title": "Type downloader middleware tests (#7858)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7644,
+    "title": "Close various garbage collectible resources (mostly in tests) (#7644)",
+    "lines": 251
+   },
+   "Bs": [
+    {
+     "pr": 7826,
+     "title": "Support feed modes (#7826)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 8146,
+     "title": "Deprecate remaining planned scrapy.utils (#8146)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7953,
+     "title": "Add FTPS support to the FTP feed export storage (#7953)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7655,
+    "title": "Improve test coverage for downloader middlewares (#7655)",
+    "lines": 189
+   },
+   "Bs": [
+    {
+     "pr": 8213,
+     "title": "Add an FTP download handler for reactorless mode (#8213)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8153,
+     "title": "WIP (#8153)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8177,
+     "title": "Let process_response() exceptions reach process_exception() (#8177)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7742,
+     "title": "Log ignored responses exceeding DOWNLOAD_MAXSIZE (#7742)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7637,
+    "title": "Address warnings in tests. (#7637)",
+    "lines": 78
+   },
+   "Bs": [
+    {
+     "pr": 7886,
+     "title": "Support asynchronous callbacks in contracts (#7886)",
+     "lines_of_A_modified": 4
+    },
+    {
+     "pr": 8023,
+     "title": "Remove deprecated CaselessDict and md5sum() (#8023)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7614,
+    "title": "Fix image store ACL settings for S3 and GCS (#7614)",
+    "lines": 64
+   },
+   "Bs": [
+    {
+     "pr": 7925,
+     "title": "Make media pipeline storages configurable components (#7925)",
+     "lines_of_A_modified": 15
+    },
+    {
+     "pr": 8262,
+     "title": "Bump the minimum Python version for Ruff. (#8262)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 7973,
+     "title": "Deprecate the old import path of FileException (#7973)",
+     "lines_of_A_modified": 7
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7603,
+    "title": "Fix request_to_curl handling of verbose cookies dictionaries (#7603)",
+    "lines": 52
+   },
+   "Bs": [
+    {
+     "pr": 7684,
+     "title": "Cleanup cookie handling in request_to_curl() (#7684)",
+     "lines_of_A_modified": 6
+    },
+    {
+     "pr": 7675,
+     "title": "Fix request_to_curl() corrupting dict cookies with bytes keys/values (#7675)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7619,
+    "title": "Fix deprecation warnings with pyOpenSSL 26.3.0. (#7619)",
+    "lines": 98
+   },
+   "Bs": [
+    {
+     "pr": 8135,
+     "title": "Deprecate some of scrapy.utils (#8135)",
+     "lines_of_A_modified": 23
+    },
+    {
+     "pr": 7841,
+     "title": "Improve the test coverage of scrapy.utils (#7841)",
+     "lines_of_A_modified": 31
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 7590,
+    "title": "Implement HTTP Auth settings and request metadata keys (#7590)",
+    "lines": 338
+   },
+   "Bs": [
+    {
+     "pr": 8329,
+     "title": "Only send http_user/http_pass to the origin they were first used on (#8329)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 8247,
+     "title": "Cache URL parses per URL and parse fewer URLs per request (#8247)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  }
+ ]
+}

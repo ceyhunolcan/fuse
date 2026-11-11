@@ -1,0 +1,69 @@
+{
+ "repo": "fastapi",
+ "cutoff": "2026-06-06",
+ "commits": 435,
+ "triples": [
+  {
+   "A": {
+    "pr": 16564,
+    "title": "\ud83d\udc1b Fix validation error locations for form and file `AliasChoices` (#16564)",
+    "lines": 243
+   },
+   "Bs": [
+    {
+     "pr": 16596,
+     "title": "\u2728 Add support for combining unions of form models (#16596)",
+     "lines_of_A_modified": 3
+    },
+    {
+     "pr": 16577,
+     "title": "\u2728 Add support for combining form models (#16577)",
+     "lines_of_A_modified": 2
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 16538,
+    "title": "\ud83d\udc1b Fix header model validation errors to report HTTP header names (#16538)",
+    "lines": 215
+   },
+   "Bs": [
+    {
+     "pr": 16573,
+     "title": "\u2728 Add support for combining query, header, and cookie parameter models (#16573)",
+     "lines_of_A_modified": 12
+    },
+    {
+     "pr": 16555,
+     "title": "\ud83d\udc1b Fix `AliasChoices` for query parameters, headers, and cookies (#16555)",
+     "lines_of_A_modified": 1
+    }
+   ]
+  },
+  {
+   "A": {
+    "pr": 16536,
+    "title": "\ud83d\udc1b Distinguish JSON null from omitted body values (#16536)",
+    "lines": 319
+   },
+   "Bs": [
+    {
+     "pr": 16564,
+     "title": "\ud83d\udc1b Fix validation error locations for form and file `AliasChoices` (#16564)",
+     "lines_of_A_modified": 2
+    },
+    {
+     "pr": 16559,
+     "title": "\ud83d\udc1b Fix `AliasChoices` for named JSON body parameters (#16559)",
+     "lines_of_A_modified": 1
+    },
+    {
+     "pr": 16557,
+     "title": "\ud83d\udc1b Fix `AliasChoices` extraction for form models (#16557)",
+     "lines_of_A_modified": 4
+    }
+   ]
+  }
+ ]
+}
