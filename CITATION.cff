@@ -2,6 +2,14 @@ cff-version: 1.2.0
 message: "If you use these tasks or this harness, please cite the paper below."
 title: "FUSE: development tasks and agent harness"
 version: "0.1.0-dev"
+doi: 10.5281/zenodo.24182004
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.24182004
+    description: "All versions (resolves to the latest)"
+  - type: doi
+    value: 10.5281/zenodo.24182005
+    description: "Version 0.1.0-dev"
 date-released: "2026-11-13"
 abstract: >-
   FUSE (Future-conditioned Software Evolution) asks whether telling a coding

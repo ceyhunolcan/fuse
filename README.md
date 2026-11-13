@@ -1,6 +1,7 @@
 # FUSE: telling coding agents what comes next
 
 [![Tests](https://github.com/ceyhunolcan/fuse/actions/workflows/tests.yml/badge.svg)](https://github.com/ceyhunolcan/fuse/actions/workflows/tests.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24182004.svg)](https://doi.org/10.5281/zenodo.24182004)
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
 ![Release: development](https://img.shields.io/badge/release-development-orange.svg)
@@ -205,6 +206,8 @@ The confirmatory study is proposed as a registered report: the design and analys
 
 Apache-2.0 ([LICENSE](LICENSE)). The task families are adapted from SlopCodeBench (Apache-2.0). The mined triples include code and tests from Starlette (BSD-3-Clause) and Strix (Apache-2.0), which keep their licences; see [NOTICE](NOTICE).
 
+To cite the paper:
+
 ```bibtex
 @misc{olcan2026fuse,
   author       = {Olcan, Ceyhun},
@@ -215,4 +218,18 @@ Apache-2.0 ([LICENSE](LICENSE)). The task families are adapted from SlopCodeBenc
 }
 ```
 
-The evidence and reproduction materials are at the [Kaggle dataset](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip). See also [CITATION.cff](CITATION.cff); a DOI for this software is added with the first archived release.
+The evidence and reproduction materials are at the [Kaggle dataset](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip). To cite this software (version 0.1.0-dev, archived on Zenodo):
+
+```bibtex
+@software{olcan2026fuse_software,
+  author    = {Olcan, Ceyhun},
+  title     = {{FUSE}: development tasks and agent harness},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {0.1.0-dev},
+  doi       = {10.5281/zenodo.24182005},
+  url       = {https://doi.org/10.5281/zenodo.24182005}
+}
+```
+
+The DOI [10.5281/zenodo.24182004](https://doi.org/10.5281/zenodo.24182004) covers all versions and always resolves to the latest one. See also [CITATION.cff](CITATION.cff).

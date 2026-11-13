@@ -164,9 +164,13 @@ write_files(task["tests_A"], "work/circuit_001/hidden/A/tests")      # keep hidd
 ## Links
 
 - Code and harness: [github.com/ceyhunolcan/fuse](https://github.com/ceyhunolcan/fuse)
-- Paper, sealed evidence and reproduction script: [kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip)
+- Paper: [Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) (Kaggle Writeup)
+- Sealed evidence and reproduction script: [kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip)
+- Software archive: [doi.org/10.5281/zenodo.24182004](https://doi.org/10.5281/zenodo.24182004) (Zenodo, all versions)
 
 ## Citation
+
+To cite the paper:
 
 ```bibtex
 @misc{olcan2026fuse,
@@ -174,6 +178,20 @@ write_files(task["tests_A"], "work/circuit_001/hidden/A/tests")      # keep hidd
   title        = {Heads-Up Before the Handoff: Telling {Gemma} 4 Coding Agents What Comes Next},
   year         = {2026},
   howpublished = {Kaggle Gemma 4 Developer Agent Paper Track},
-  url          = {https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip}
+  url          = {https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695}
+}
+```
+
+To cite the tasks and harness (version 0.1.0-dev):
+
+```bibtex
+@software{olcan2026fuse_software,
+  author    = {Olcan, Ceyhun},
+  title     = {{FUSE}: development tasks and agent harness},
+  year      = {2026},
+  publisher = {Zenodo},
+  version   = {0.1.0-dev},
+  doi       = {10.5281/zenodo.24182005},
+  url       = {https://doi.org/10.5281/zenodo.24182005}
 }
 ```
