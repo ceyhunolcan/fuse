@@ -12,7 +12,7 @@
 
 FUSE (Future-conditioned Software Evolution) answers this with a *disclosure crossover*. This repository contains the agent harness used in the preliminary study, the three tasks that study ran, and two mined development triples. It is a development release: the tasks build and check the method, and the confirmatory study is planned as a registered report.
 
-**Paper:** [Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) (Kaggle Gemma 4 Developer Agent Paper Track, 2026) · **Evidence:** [reproducibility package](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip) · **Dataset:** [`ceyhunolcan/fuse`](https://huggingface.co/datasets/ceyhunolcan/fuse) on HuggingFace
+**Paper:** [Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) (Kaggle Gemma 4 Developer Agent Paper Track, 2026; DOI [10.34740/kaggle/w/117440](https://doi.org/10.34740/kaggle/w/117440)) · **Evidence:** [reproducibility package](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip) · **Dataset:** [`ceyhunolcan/fuse`](https://huggingface.co/datasets/ceyhunolcan/fuse) on HuggingFace
 
 > **Key findings of the preliminary study** (`gemma-4-31b-it-qat-w4a16-ct`, three tasks, 51 sessions)
 > - None of the 51 completed sessions passed its full hidden suite, so the identity premium τ_ID could not be estimated.
@@ -214,6 +214,7 @@ To cite the paper:
   title        = {Heads-Up Before the Handoff: Telling {Gemma} 4 Coding Agents What Comes Next},
   year         = {2026},
   howpublished = {Kaggle Gemma 4 Developer Agent Paper Track},
+  doi          = {10.34740/kaggle/w/117440},
   url          = {https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695}
 }
 ```

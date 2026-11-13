@@ -164,7 +164,7 @@ write_files(task["tests_A"], "work/circuit_001/hidden/A/tests")      # keep hidd
 ## Links
 
 - Code and harness: [github.com/ceyhunolcan/fuse](https://github.com/ceyhunolcan/fuse)
-- Paper: [Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) (Kaggle Writeup)
+- Paper: [Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) (Kaggle Writeup, DOI [10.34740/kaggle/w/117440](https://doi.org/10.34740/kaggle/w/117440))
 - Sealed evidence and reproduction script: [kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip)
 - Software archive: [doi.org/10.5281/zenodo.24182004](https://doi.org/10.5281/zenodo.24182004) (Zenodo, all versions)
 
@@ -178,6 +178,7 @@ To cite the paper:
   title        = {Heads-Up Before the Handoff: Telling {Gemma} 4 Coding Agents What Comes Next},
   year         = {2026},
   howpublished = {Kaggle Gemma 4 Developer Agent Paper Track},
+  doi          = {10.34740/kaggle/w/117440},
   url          = {https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695}
 }
 ```
