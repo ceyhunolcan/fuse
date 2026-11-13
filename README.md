@@ -4,10 +4,19 @@
 [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](LICENSE)
 ![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)
 ![Release: development](https://img.shields.io/badge/release-development-orange.svg)
+[![Paper: Kaggle Writeup](https://img.shields.io/badge/paper-Kaggle%20Writeup-20BEFF.svg)](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695)
+[![Evidence: Kaggle dataset](https://img.shields.io/badge/evidence-Kaggle%20dataset-20BEFF.svg)](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip)
 
 **Does telling a coding agent which requirement comes next, while instructing it to implement only the current one, make its code easier for a fresh agent to extend in that direction?**
 
 FUSE (Future-conditioned Software Evolution) answers this with a *disclosure crossover*. This repository contains the agent harness used in the preliminary study, the three tasks that study ran, and two mined development triples. It is a development release: the tasks build and check the method, and the confirmatory study is planned as a registered report.
+
+**Paper:** [Heads-Up Before the Handoff: Telling Gemma 4 Coding Agents What Comes Next](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) (Kaggle Gemma 4 Developer Agent Paper Track, 2026) · **Evidence:** [reproducibility package](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip) · **Dataset:** [`ceyhunolcan/fuse`](https://huggingface.co/datasets/ceyhunolcan/fuse) on HuggingFace
+
+> **Key findings of the preliminary study** (`gemma-4-31b-it-qat-w4a16-ct`, three tasks, 51 sessions)
+> - None of the 51 completed sessions passed its full hidden suite, so the identity premium τ_ID could not be estimated.
+> - The interface got in the way: 86% of command outputs were cut at the 2,048-byte limit, and 43% of turns exactly repeated the previous command.
+> - In a pre-registered rerun, doubling the limit to 4,096 bytes took Circuit from 0 of 2 to 2 of 2 passing sessions (one run per prompt; not a general causal estimate).
 
 **Contents:** [Design](#the-design) · [What is included](#what-is-included) · [Quick start](#quick-start) · [How a run works](#how-a-run-works) · [Preliminary study](#preliminary-study) · [Planned confirmatory study](#planned-confirmatory-study) · [Repository layout](#repository-layout) · [Citation](#licence-and-citation)
 
@@ -154,7 +163,7 @@ Of 265 rejected actions, 117 were invalid JSON escapes (regular expressions writ
 
 A larger output limit was enough for both Circuit prompts to pass (one run each, in a separate launch; not a general causal estimate). The interface repairs cut rejected turns from 60% to 16% but did not raise the number of passing sessions. The disclosure changed the code agents wrote in two of three tasks in the main stage and in all three in the reruns; whether it steers that code toward the disclosed future is untested.
 
-The paper, the sealed evidence and a script that recomputes every result above are in the [reproducibility package on Kaggle](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip).
+The [paper](https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695) and the sealed evidence, with a script that recomputes every result above, are public: see the [reproducibility package on Kaggle](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip).
 
 ## Planned confirmatory study
 
@@ -202,8 +211,8 @@ Apache-2.0 ([LICENSE](LICENSE)). The task families are adapted from SlopCodeBenc
   title        = {Heads-Up Before the Handoff: Telling {Gemma} 4 Coding Agents What Comes Next},
   year         = {2026},
   howpublished = {Kaggle Gemma 4 Developer Agent Paper Track},
-  url          = {https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip}
+  url          = {https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695}
 }
 ```
 
-See also [CITATION.cff](CITATION.cff).
+The evidence and reproduction materials are at the [Kaggle dataset](https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip). See also [CITATION.cff](CITATION.cff); a DOI for this software is added with the first archived release.

@@ -1,6 +1,22 @@
 cff-version: 1.2.0
 message: "If you use these tasks or this harness, please cite the paper below."
 title: "FUSE: development tasks and agent harness"
+version: "0.1.0-dev"
+date-released: "2026-11-13"
+abstract: >-
+  FUSE (Future-conditioned Software Evolution) asks whether telling a coding
+  agent which requirement comes next, while instructing it to implement only
+  the current one, makes its code easier for a fresh agent to extend. This
+  development release contains the agent harness of the preliminary study,
+  its three authored tasks with hidden test suites, two mined development
+  triples from Starlette and Strix, and the identity-premium estimator.
+keywords:
+  - coding agents
+  - large language models
+  - software evolution
+  - mining software repositories
+  - registered report
+  - Gemma 4
 authors:
   - family-names: Olcan
     given-names: Ceyhun
@@ -16,4 +32,4 @@ preferred-citation:
       given-names: Ceyhun
   collection-title: "Kaggle Gemma 4 Developer Agent Paper Track"
   year: 2026
-  url: "https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip"
+  url: "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695"
