@@ -1,0 +1,45 @@
+{
+  "title": "FUSE: development tasks and agent harness",
+  "upload_type": "software",
+  "version": "0.1.0-dev",
+  "description": "<p>FUSE (Future-conditioned Software Evolution) asks whether telling a coding agent which requirement comes next, while instructing it to implement only the current one, makes its code easier for a fresh agent to extend in that direction.</p><p>This development release contains the agent harness of the preliminary study (agent loop, Docker sandbox, grading and the identity-premium estimator), its three authored tasks (Circuit, CodeSearch and TextDrop) with 71 hidden tests, and two mined development triples from Starlette and Strix with ports, fixture checks and dependency checks. The confirmatory study is planned as a registered report; its tasks are not part of this release.</p>",
+  "creators": [
+    {
+      "name": "Olcan, Ceyhun",
+      "affiliation": "Dartmouth College",
+      "orcid": "0000-0002-6326-6071"
+    }
+  ],
+  "license": "apache-2.0",
+  "access_right": "open",
+  "language": "eng",
+  "keywords": [
+    "coding agents",
+    "large language models",
+    "software evolution",
+    "mining software repositories",
+    "registered report",
+    "Gemma 4"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://www.kaggle.com/competitions/gemma-4-developer-agent-paper/writeups/new-writeup-1791405149695",
+      "relation": "isSupplementTo"
+    },
+    {
+      "identifier": "https://www.kaggle.com/datasets/ceyhunolcan/fuse-reproducibility-package-zip",
+      "relation": "isSupplementTo",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://huggingface.co/datasets/ceyhunolcan/fuse",
+      "relation": "isSourceOf",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://github.com/gabeorlanski/scb-problems",
+      "relation": "isDerivedFrom",
+      "resource_type": "software"
+    }
+  ]
+}
